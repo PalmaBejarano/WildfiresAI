@@ -27,7 +27,8 @@ WildfiresAI integrates **environmental intelligence** and **operational planning
 
 ## 3. Data Flow
 
-![AG2 Workflow](../figs/AG2_flowchart.png)
+![Workflow](../figs/AG2_Flowchart.png)
+
 
 
 
