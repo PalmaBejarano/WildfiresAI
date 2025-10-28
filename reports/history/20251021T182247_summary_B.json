@@ -1,0 +1,10 @@
+{
+  "agent": "MaterialsFramework",
+  "status": "ok",
+  "wildfire_context": {
+    "region": "FRANCE",
+    "slope_mean_deg": 13.69
+  },
+  "candidates_top3": [],
+  "timestamp": "2025-10-21T18:22:47+00:00"
+}

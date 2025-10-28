@@ -1,0 +1,1 @@
+{"agent": "AnalysisAgentWildfire", "error": "fires_terrain_missing"}

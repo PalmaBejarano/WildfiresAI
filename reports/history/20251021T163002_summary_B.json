@@ -1,0 +1,18 @@
+{
+  "agent": "MaterialsFramework",
+  "status": "ok",
+  "wildfire_context": {
+    "region": "GLOBAL",
+    "slope_mean_deg": null
+  },
+  "candidates_top3": [
+    {
+      "material_id": "mp-000",
+      "formula_pretty": "SiO₂",
+      "energy_above_hull": 0.05,
+      "density": 2.6,
+      "env_score": -0.37
+    }
+  ],
+  "timestamp": "2025-10-21T18:30:02"
+}

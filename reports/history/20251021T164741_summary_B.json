@@ -1,0 +1,10 @@
+{
+  "agent": "MaterialsFramework",
+  "status": "ok",
+  "wildfire_context": {
+    "region": "GLOBAL",
+    "slope_mean_deg": 11.62
+  },
+  "candidates_top3": [],
+  "timestamp": "2025-10-21T16:47:41+00:00"
+}

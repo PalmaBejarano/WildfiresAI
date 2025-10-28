@@ -1,0 +1,233 @@
+[2025-10-21T16:21:32+00:00] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-10-21T16:23:03+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T16:23:03+00:00]  Pipeline failed: No module named 'framework_a'
+[2025-10-21T16:23:03+00:00] Traceback (most recent call last):
+  File "/var/folders/wn/mpnj0v3s1_1fd88s9l4c9pth0000gn/T/ipykernel_94010/2379389731.py", line 116, in pipeline
+    A = self.run_A(**kwargs)
+  File "/var/folders/wn/mpnj0v3s1_1fd88s9l4c9pth0000gn/T/ipykernel_94010/2379389731.py", line 81, in run_A
+    from framework_a import run_wildfire_framework
+ModuleNotFoundError: No module named 'framework_a'
+
+[2025-10-21T16:23:03+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T16:29:57+00:00] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-10-21T16:30:02+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T16:30:02+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T16:30:02+00:00] Framework A OK — 6 fields.
+[2025-10-21T16:30:02+00:00] Running Framework B (Materials Intelligence)…
+[2025-10-21T16:30:02+00:00] Framework B OK — 5 fields.
+[2025-10-21T16:30:02+00:00] AG2 pipeline completed successfully.
+[2025-10-21T16:30:02+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T16:34:54+00:00] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-10-21T16:34:58+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T16:34:58+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T16:34:58+00:00] Framework A OK — 6 fields.
+[2025-10-21T16:34:58+00:00] Running Framework B (Materials Intelligence)…
+[2025-10-21T16:34:58+00:00] Framework B OK — 5 fields.
+[2025-10-21T16:34:58+00:00] AG2 pipeline completed successfully.
+[2025-10-21T16:34:58+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T16:38:13+00:00] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-10-21T16:38:19+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T16:38:19+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T16:38:19+00:00] Pipeline failed: Function run_wildfire_framework() not found. Please execute Cell 4.1 (Framework A) first.
+[2025-10-21T16:38:19+00:00] Traceback (most recent call last):
+  File "/var/folders/wn/mpnj0v3s1_1fd88s9l4c9pth0000gn/T/ipykernel_95668/917730458.py", line 145, in pipeline
+    A = self.run_A(**kwargs)
+  File "/var/folders/wn/mpnj0v3s1_1fd88s9l4c9pth0000gn/T/ipykernel_95668/917730458.py", line 89, in run_A
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: Function run_wildfire_framework() not found. Please execute Cell 4.1 (Framework A) first.
+
+[2025-10-21T16:38:19+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T16:40:27+00:00] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-10-21T16:40:29+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T16:40:29+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T16:40:29+00:00] Pipeline failed: Function run_wildfire_framework() not found. Please execute Cell 4.1 (Framework A) first.
+[2025-10-21T16:40:29+00:00] Traceback (most recent call last):
+  File "/var/folders/wn/mpnj0v3s1_1fd88s9l4c9pth0000gn/T/ipykernel_95668/917730458.py", line 145, in pipeline
+    A = self.run_A(**kwargs)
+  File "/var/folders/wn/mpnj0v3s1_1fd88s9l4c9pth0000gn/T/ipykernel_95668/917730458.py", line 89, in run_A
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: Function run_wildfire_framework() not found. Please execute Cell 4.1 (Framework A) first.
+
+[2025-10-21T16:40:29+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T16:43:55+00:00] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-10-21T16:44:00+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T16:44:00+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T16:44:00+00:00] Framework A OK — 6 fields.
+[2025-10-21T16:44:00+00:00] Running Framework B (Materials Intelligence)…
+[2025-10-21T16:44:00+00:00] Pipeline failed: Function run_material_framework() not found. Please execute Cell 4.3 (Framework B) first.
+[2025-10-21T16:44:00+00:00] Traceback (most recent call last):
+  File "/var/folders/wn/mpnj0v3s1_1fd88s9l4c9pth0000gn/T/ipykernel_95668/917730458.py", line 146, in pipeline
+    B = self.run_B()
+  File "/var/folders/wn/mpnj0v3s1_1fd88s9l4c9pth0000gn/T/ipykernel_95668/917730458.py", line 119, in run_B
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: Function run_material_framework() not found. Please execute Cell 4.3 (Framework B) first.
+
+[2025-10-21T16:44:00+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T16:45:27+00:00] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-10-21T16:45:32+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T16:45:32+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T16:45:32+00:00] Framework A OK — 6 fields.
+[2025-10-21T16:45:32+00:00] Running Framework B (Materials Intelligence)…
+[2025-10-21T16:45:32+00:00] Context built for region=GLOBAL, T=52.8°C, RH=30%
+[2025-10-21T16:45:32+00:00] ⚠️ MP_API fallback: MaterialsRester.search() got an unexpected keyword argument 'energy_above_hull'
+[2025-10-21T16:45:32+00:00] MaterialsAgent returned 0 candidates (fallback).
+[2025-10-21T16:45:32+00:00] Swarm plan created for 3 drones in valley_edge.
+[2025-10-21T16:45:32+00:00] Simulation done: efficiency=0.51, saved=977.4 ha.
+[2025-10-21T16:45:32+00:00] ActuationAgent: mission executed.
+[2025-10-21T16:45:32+00:00] Framework B OK — 5 fields.
+[2025-10-21T16:45:32+00:00] AG2 pipeline completed successfully.
+[2025-10-21T16:45:32+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T16:46:49+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T16:46:49+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T16:46:49+00:00] Framework A OK — 6 fields.
+[2025-10-21T16:46:49+00:00] Running Framework B (Materials Intelligence)…
+[2025-10-21T16:46:49+00:00] Context built for region=GLOBAL, T=45.1°C, RH=30%
+[2025-10-21T16:46:49+00:00] ⚠️ MP_API fallback: MaterialsRester.search() got an unexpected keyword argument 'energy_above_hull'
+[2025-10-21T16:46:49+00:00] MaterialsAgent returned 0 candidates (fallback).
+[2025-10-21T16:46:49+00:00] Swarm plan created for 7 drones in north_sector.
+[2025-10-21T16:46:49+00:00] Simulation done: efficiency=0.37, saved=991.9 ha.
+[2025-10-21T16:46:49+00:00] ActuationAgent: mission executed.
+[2025-10-21T16:46:49+00:00] Framework B OK — 5 fields.
+[2025-10-21T16:46:49+00:00] AG2 pipeline completed successfully.
+[2025-10-21T16:46:49+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T16:47:41+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T16:47:41+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T16:47:41+00:00] Framework A OK — 6 fields.
+[2025-10-21T16:47:41+00:00] Running Framework B (Materials Intelligence)…
+[2025-10-21T16:47:41+00:00] Context built for region=GLOBAL, T=26.7°C, RH=30%
+[2025-10-21T16:47:41+00:00] ⚠️ MP_API fallback: MaterialsRester.search() got an unexpected keyword argument 'energy_above_hull'
+[2025-10-21T16:47:41+00:00] MaterialsAgent returned 0 candidates (fallback).
+[2025-10-21T16:47:41+00:00] Swarm plan created for 3 drones in ridge_zone.
+[2025-10-21T16:47:41+00:00] Simulation done: efficiency=0.3, saved=467.3 ha.
+[2025-10-21T16:47:41+00:00] ActuationAgent: mission executed.
+[2025-10-21T16:47:41+00:00] Framework B OK — 5 fields.
+[2025-10-21T16:47:41+00:00] AG2 pipeline completed successfully.
+[2025-10-21T16:47:41+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T16:49:40+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T16:49:40+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T16:49:40+00:00] Framework A OK — 6 fields.
+[2025-10-21T16:49:40+00:00] Running Framework B (Materials Intelligence)…
+[2025-10-21T16:49:40+00:00] Context built for region=GLOBAL, T=37.2°C, RH=30%
+[2025-10-21T16:49:40+00:00] ⚠️ MP_API fallback: MaterialsRester.search() got an unexpected keyword argument 'energy_above_hull'
+[2025-10-21T16:49:40+00:00] MaterialsAgent returned 0 candidates (fallback).
+[2025-10-21T16:49:40+00:00] Swarm plan created for 9 drones in south_sector.
+[2025-10-21T16:49:40+00:00] Simulation done: efficiency=0.56, saved=2044.2 ha.
+[2025-10-21T16:49:40+00:00] ActuationAgent: mission executed.
+[2025-10-21T16:49:40+00:00] Framework B OK — 5 fields.
+[2025-10-21T16:49:40+00:00] AG2 pipeline completed successfully.
+[2025-10-21T16:49:40+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T17:10:15+00:00] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-10-21T17:10:15+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T17:10:15+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T17:10:15+00:00] Framework A OK — 6 fields.
+[2025-10-21T17:10:15+00:00] Running Framework B (Materials Intelligence)…
+[2025-10-21T17:10:15+00:00] Context built for region=GLOBAL, T=40.1°C, RH=30%
+[2025-10-21T17:10:15+00:00] ⚠️ MP_API fallback: MaterialsRester.search() got an unexpected keyword argument 'energy_above_hull'
+[2025-10-21T17:10:15+00:00] MaterialsAgent returned 0 candidates (fallback).
+[2025-10-21T17:10:15+00:00] Swarm plan created for 8 drones in south_sector.
+[2025-10-21T17:10:15+00:00] Simulation done: efficiency=0.33, saved=1376.9 ha.
+[2025-10-21T17:10:15+00:00] ActuationAgent: mission executed.
+[2025-10-21T17:10:15+00:00] Framework B OK — 5 fields.
+[2025-10-21T17:10:15+00:00] AG2 pipeline completed successfully.
+[2025-10-21T17:10:15+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T17:12:33+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T17:12:33+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T17:12:33+00:00] Framework A OK — 6 fields.
+[2025-10-21T17:12:33+00:00] Running Framework B (Materials Intelligence)…
+[2025-10-21T17:12:33+00:00] Context built for region=GLOBAL, T=33.1°C, RH=30%
+[2025-10-21T17:12:33+00:00] ⚠️ MP_API fallback: MaterialsRester.search() got an unexpected keyword argument 'energy_above_hull'
+[2025-10-21T17:12:33+00:00] MaterialsAgent returned 0 candidates (fallback).
+[2025-10-21T17:12:33+00:00] Swarm plan created for 6 drones in valley_edge.
+[2025-10-21T17:12:33+00:00] Simulation done: efficiency=0.23, saved=423.6 ha.
+[2025-10-21T17:12:33+00:00] ActuationAgent: mission executed.
+[2025-10-21T17:12:33+00:00] Framework B OK — 5 fields.
+[2025-10-21T17:12:33+00:00] AG2 pipeline completed successfully.
+[2025-10-21T17:12:33+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T17:22:31+00:00] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-10-21T17:22:31+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T17:22:31+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T17:22:31+00:00] Framework A OK — 6 fields.
+[2025-10-21T17:22:31+00:00] Running Framework B (Materials Intelligence)…
+[2025-10-21T17:22:31+00:00] Context built for region=GLOBAL, T=36.0°C, RH=30%
+[2025-10-21T17:22:31+00:00] ⚠️ MP_API fallback: MaterialsRester.search() got an unexpected keyword argument 'energy_above_hull'
+[2025-10-21T17:22:31+00:00] MaterialsAgent returned 0 candidates (fallback).
+[2025-10-21T17:22:31+00:00] Swarm plan created for 9 drones in ridge_zone.
+[2025-10-21T17:22:31+00:00] Simulation done: efficiency=0.5, saved=1650.8 ha.
+[2025-10-21T17:22:31+00:00] ActuationAgent: mission executed.
+[2025-10-21T17:22:31+00:00] Framework B OK — 5 fields.
+[2025-10-21T17:22:31+00:00] AG2 pipeline completed successfully.
+[2025-10-21T17:22:31+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T17:24:49+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T17:24:49+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T17:24:49+00:00] Framework A OK — 6 fields.
+[2025-10-21T17:24:49+00:00] Running Framework B (Materials Intelligence)…
+[2025-10-21T17:24:49+00:00] Context built for region=GLOBAL, T=42.8°C, RH=30%
+[2025-10-21T17:24:49+00:00] ⚠️ MP_API fallback: MaterialsRester.search() got an unexpected keyword argument 'energy_above_hull'
+[2025-10-21T17:24:49+00:00] MaterialsAgent returned 0 candidates (fallback).
+[2025-10-21T17:24:49+00:00] Swarm plan created for 7 drones in valley_edge.
+[2025-10-21T17:24:49+00:00] Simulation done: efficiency=0.41, saved=884.4 ha.
+[2025-10-21T17:24:49+00:00] ActuationAgent: mission executed.
+[2025-10-21T17:24:49+00:00] Framework B OK — 5 fields.
+[2025-10-21T17:24:49+00:00] AG2 pipeline completed successfully.
+[2025-10-21T17:24:49+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T17:50:02+00:00] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-10-21T17:59:45+00:00] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-10-21T17:59:45+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T17:59:45+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T17:59:45+00:00] Framework A OK — 6 fields.
+[2025-10-21T17:59:45+00:00] Running Framework B (Materials Intelligence)…
+[2025-10-21T17:59:45+00:00] Context built for region=GLOBAL, T=33.6°C, RH=30%
+[2025-10-21T17:59:45+00:00] ⚠️ MP_API fallback: MaterialsRester.search() got an unexpected keyword argument 'energy_above_hull'
+[2025-10-21T17:59:45+00:00] MaterialsAgent returned 0 candidates (fallback).
+[2025-10-21T17:59:45+00:00] Swarm plan created for 4 drones in south_sector.
+[2025-10-21T17:59:45+00:00] Simulation done: efficiency=0.51, saved=1893.5 ha.
+[2025-10-21T17:59:45+00:00] ActuationAgent: mission executed.
+[2025-10-21T17:59:45+00:00] Framework B OK — 5 fields.
+[2025-10-21T17:59:45+00:00] AG2 pipeline completed successfully.
+[2025-10-21T17:59:45+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T17:59:54+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T17:59:54+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T17:59:54+00:00] Framework A OK — 6 fields.
+[2025-10-21T17:59:54+00:00] Running Framework B (Materials Intelligence)…
+[2025-10-21T17:59:54+00:00] Context built for region=GLOBAL, T=52.2°C, RH=30%
+[2025-10-21T17:59:54+00:00] ⚠️ MP_API fallback: MaterialsRester.search() got an unexpected keyword argument 'energy_above_hull'
+[2025-10-21T17:59:54+00:00] MaterialsAgent returned 0 candidates (fallback).
+[2025-10-21T17:59:54+00:00] Swarm plan created for 6 drones in south_sector.
+[2025-10-21T17:59:54+00:00] Simulation done: efficiency=0.48, saved=2072.5 ha.
+[2025-10-21T17:59:54+00:00] ActuationAgent: mission executed.
+[2025-10-21T17:59:54+00:00] Framework B OK — 5 fields.
+[2025-10-21T17:59:54+00:00] AG2 pipeline completed successfully.
+[2025-10-21T17:59:54+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T18:06:26+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T18:06:26+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T18:06:26+00:00] Framework A OK — 6 fields.
+[2025-10-21T18:06:26+00:00] Running Framework B (Materials Intelligence)…
+[2025-10-21T18:06:26+00:00] Context built for region=SPAIN, T=41.6°C, RH=30%
+[2025-10-21T18:06:26+00:00] ⚠️ MP_API fallback: MaterialsRester.search() got an unexpected keyword argument 'energy_above_hull'
+[2025-10-21T18:06:26+00:00] MaterialsAgent returned 0 candidates (fallback).
+[2025-10-21T18:06:26+00:00] Swarm plan created for 8 drones in ridge_zone.
+[2025-10-21T18:06:26+00:00] Simulation done: efficiency=0.44, saved=719.9 ha.
+[2025-10-21T18:06:26+00:00] ActuationAgent: mission executed.
+[2025-10-21T18:06:26+00:00] Framework B OK — 5 fields.
+[2025-10-21T18:06:26+00:00] AG2 pipeline completed successfully.
+[2025-10-21T18:06:26+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-21T18:22:47+00:00] ══════════ AG2 PIPELINE START ══════════
+[2025-10-21T18:22:47+00:00] Running Framework A (Wildfire Intelligence)…
+[2025-10-21T18:22:47+00:00] Framework A OK — 6 fields.
+[2025-10-21T18:22:47+00:00] Running Framework B (Materials Intelligence)…
+[2025-10-21T18:22:47+00:00] Context built for region=FRANCE, T=41.1°C, RH=30%
+[2025-10-21T18:22:47+00:00] ⚠️ MP_API fallback: MaterialsRester.search() got an unexpected keyword argument 'energy_above_hull'
+[2025-10-21T18:22:47+00:00] MaterialsAgent returned 0 candidates (fallback).
+[2025-10-21T18:22:47+00:00] Swarm plan created for 8 drones in south_sector.
+[2025-10-21T18:22:47+00:00] Simulation done: efficiency=0.33, saved=1437.6 ha.
+[2025-10-21T18:22:47+00:00] ActuationAgent: mission executed.
+[2025-10-21T18:22:47+00:00] Framework B OK — 5 fields.
+[2025-10-21T18:22:47+00:00] AG2 pipeline completed successfully.
+[2025-10-21T18:22:47+00:00] ══════════ AG2 PIPELINE END ══════════
+[2025-10-28T12:11:03+00:00][manual] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent

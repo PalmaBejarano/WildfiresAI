@@ -1,0 +1,16 @@
+{
+  "agent": "AnalysisAgentWildfire",
+  "region": "GLOBAL",
+  "window": {
+    "from": "2025-10-14",
+    "to": "2025-10-21"
+  },
+  "metrics": {
+    "slope_mean_deg": 17.91,
+    "elevation_median": 415.26,
+    "veg_index": 0.69,
+    "activity_score": 0.75,
+    "ignition_risk": 0.67
+  },
+  "timestamp": "2025-10-21T15:09:33"
+}

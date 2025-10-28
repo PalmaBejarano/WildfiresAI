@@ -1,0 +1,19 @@
+{
+  "agent": "WildfireFramework",
+  "region": "GLOBAL",
+  "window": {
+    "from": "2025-10-14",
+    "to": "2025-10-21"
+  },
+  "timestamp": "2025-10-21T17:59:54+00:00",
+  "counts": {
+    "fires": 146
+  },
+  "signals": {
+    "slope_mean_deg": 10.89,
+    "elevation_median": 730.85,
+    "veg_index": 0.76,
+    "activity_score": 0.61,
+    "ignition_risk": 0.87
+  }
+}

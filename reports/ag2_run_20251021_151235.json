@@ -1,0 +1,33 @@
+{
+  "run_id": "ag2_run_20251021_151235",
+  "timestamp_utc": "2025-10-21T15:12:35",
+  "framework_A": {
+    "agent": "AnalysisAgentWildfire",
+    "region": "GLOBAL",
+    "window": {
+      "from": "2025-10-14",
+      "to": "2025-10-21"
+    },
+    "metrics": {
+      "slope_mean_deg": 17.91,
+      "elevation_median": 415.26,
+      "veg_index": 0.69,
+      "activity_score": 0.75,
+      "ignition_risk": 0.67
+    },
+    "timestamp": "2025-10-21T15:09:33"
+  },
+  "framework_B": {
+    "agent": "SimAgent",
+    "baseline_area_ha": 3225.2,
+    "mitigated_area_ha": 1612.6,
+    "efficiency": 0.5,
+    "timestamp": "2025-10-21T15:09:33"
+  },
+  "summary": [
+    "[Materials] 10 candidates selected",
+    "[Swarm] 8 drones deployed in valley_edge",
+    "[Simulation] efficiency=0.5 saved=3225.2→1612.6 ha"
+  ],
+  "notes": "AG2 integration test automatic log"
+}

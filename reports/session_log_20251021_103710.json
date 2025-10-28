@@ -1,0 +1,7 @@
+[
+  {
+    "timestamp": "2025-10-21T10:37:27.499567",
+    "query": "hay riesgo de fuegos esta semana en el norte de españa?",
+    "response": "Region: Spain | Window: this_week (~168 h)\nArtifacts summary:\n• ignition_risk.json: missing\n• fire_forecast.json: missing\n• plan_containment.json: missing\n• deployment_plan.json: missing\n• simulation_results.json: missing\n• materials_top10.csv: missing\n• report_alerts.md: missing\nLLM response unavailable — displaying deterministic local summary."
+  }
+]

@@ -31,7 +31,6 @@ WildfiresAI integrates **environmental intelligence** and **operational planning
 
 
 
-
 **Logical flow (vertical):**  
 `User → Scientist → Planner → Coder → Writer`  
 with **feedback loops** `Coder → Planner` and `Writer → Scientist`.

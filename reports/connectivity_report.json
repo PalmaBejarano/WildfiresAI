@@ -1,0 +1,101 @@
+{
+  "generated_at": "2025-10-28T16:55:51.830135+00:00",
+  "region": "ES",
+  "window": {
+    "from": null,
+    "to": null
+  },
+  "results": {
+    "earthdata": {
+      "ok": true
+    },
+    "effis": {
+      "ok": false,
+      "wfs_head": {
+        "ok": true,
+        "status_code": 200,
+        "elapsed_s": 0.347,
+        "content_type": "text/html"
+      },
+      "wms_head": {
+        "ok": true,
+        "status_code": 200,
+        "elapsed_s": 0.07,
+        "content_type": "text/html"
+      },
+      "wcs_head": {
+        "ok": true,
+        "status_code": 200,
+        "elapsed_s": 0.076,
+        "content_type": "text/html"
+      },
+      "wfs_cap": {
+        "ok": false,
+        "reason": "ConnectionError: HTTPSConnectionPool(host='maps.effis.emergency.copernicus.eu', port=443): Max retries exceeded with url: /effis?service=WFS&request=GetCapabilities&version=1.1.1 (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='maps.effis.emergency.copernicus.eu', port=443): Read timed out. (read timeout=8)\"))",
+        "elapsed_s": 25.587
+      },
+      "wms_cap": {
+        "ok": true,
+        "status_code": 200,
+        "elapsed_s": 0.369,
+        "content_type": "application/vnd.ogc.wms_xml; charset=UTF-8"
+      },
+      "wcs_cap": {
+        "ok": true,
+        "status_code": 200,
+        "elapsed_s": 0.068,
+        "content_type": "text/html"
+      },
+      "wms_getmap_ping": {
+        "ok": true,
+        "status_code": 200,
+        "elapsed_s": 0.068,
+        "content_type": "image/png"
+      }
+    },
+    "firms": {
+      "ok": true,
+      "feeds_detected": 32,
+      "validated": 32
+    },
+    "materials_project": {
+      "ok": true,
+      "sample_docs": 1,
+      "elapsed_s": 1.025
+    },
+    "nifc": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_s": 0.499,
+      "content_type": "application/json; charset=utf-8"
+    },
+    "open_meteo": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_s": 0.345,
+      "content_type": "application/json; charset=utf-8",
+      "json_keys": [
+        "latitude",
+        "longitude",
+        "generationtime_ms",
+        "utc_offset_seconds",
+        "timezone",
+        "timezone_abbreviation",
+        "elevation",
+        "hourly_units",
+        "hourly"
+      ]
+    },
+    "openai": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_s": 1.185,
+      "content_type": "application/json"
+    },
+    "opentopo": {
+      "ok": false,
+      "reason": "ConnectionError: HTTPSConnectionPool(host='portal.opentopography.org', port=443): Max retries exceeded with url: /API/globaldem?demtype=SRTMGL3&south=40.0&north=40.1&west=-3.8&east=-3.7&outputFormat=GTiff&API_Key=9d7124761424e15428b5070dabc6a3af (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='portal.opentopography.org', port=443): Read timed out. (read timeout=8)\"))",
+      "elapsed_s": 26.143
+    }
+  }
+}

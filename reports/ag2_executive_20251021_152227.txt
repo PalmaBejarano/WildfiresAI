@@ -1,0 +1,14 @@
+───────────────────────────────────────────────
+  AG² Executive Report
+───────────────────────────────────────────────
+Timestamp: 2025-10-21T15:19:46+00:00
+Region: ES
+Overall Status: WARNING
+Warnings: 3 | Errors: 0
+  Materials framework did not return any candidates.
+
+  Key Warnings:
+   • Missing time window in one of frameworks
+   • No artifacts listed by Framework A
+   • No materials candidates returned by Framework B
+───────────────────────────────────────────────
