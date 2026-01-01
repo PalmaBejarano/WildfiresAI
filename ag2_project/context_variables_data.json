@@ -1,0 +1,32 @@
+{
+  "execution_results": {
+    "generate_summary_csv.py": {
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \u001b[35m\"/Users/evareysanchez/WildfiresAI/tmp_code_bc0eab01543c9b14c120573c4ccfdd8f.py\"\u001b[0m, line \u001b[35m11\u001b[0m, in \u001b[35m<module>\u001b[0m\n    with \u001b[31mopen\u001b[0m\u001b[1;31m('ag2_project/materials_data.json', 'r')\u001b[0m as file:\n         \u001b[31m~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\n\u001b[1;35mFileNotFoundError\u001b[0m: \u001b[35m[Errno 2] No such file or directory: 'ag2_project/materials_data.json'\u001b[0m\n"
+    },
+    "plot_band_gap_histogram.py": {
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \u001b[35m\"/Users/evareysanchez/WildfiresAI/tmp_code_3c0d25d4aae2112485d72adb748b5257.py\"\u001b[0m, line \u001b[35m11\u001b[0m, in \u001b[35m<module>\u001b[0m\n    with \u001b[31mopen\u001b[0m\u001b[1;31m('ag2_project/materials_data.json', 'r')\u001b[0m as file:\n         \u001b[31m~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\n\u001b[1;35mFileNotFoundError\u001b[0m: \u001b[35m[Errno 2] No such file or directory: 'ag2_project/materials_data.json'\u001b[0m\n"
+    },
+    "generate_summary_and_plot.py": {
+      "exit_code": 0,
+      "output": ""
+    }
+  },
+  "execution_history": [
+    "Executed generate_summary_csv.py with exit_code=1",
+    "Executed plot_band_gap_histogram.py with exit_code=1",
+    "Executed generate_summary_and_plot.py with exit_code=0"
+  ],
+  "execution_notes": [
+    "Executed code and stored output/exit_code.",
+    "Executed code and stored output/exit_code.",
+    "Executed code and stored output/exit_code."
+  ],
+  "code": [
+    {
+      "code": "#!/usr/bin/env python3\nimport os\nPROJECT_FOLDER = os.environ.get('PROJECT_FOLDER', 'ag2_project')\nos.makedirs(PROJECT_FOLDER, exist_ok=True)\nos.chdir(PROJECT_FOLDER)\n\nimport json\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load the materials data\nwith open('materials_data.json', 'r') as file:\n    materials_data = json.load(file)\n\n# Extract relevant fields for the summary table\nsummary_data = [\n    {\n        \"material_id\": m[\"material_id\"],\n        \"formula_pretty\": m[\"formula_pretty\"],\n        \"band_gap\": m[\"key_properties\"][\"band_gap\"],\n        \"energy_above_hull\": m[\"key_properties\"][\"energy_above_hull\"],\n        \"density\": m[\"key_properties\"][\"density\"]\n    }\n    for m in materials_data[\"materials\"]\n]\n\n# Create a DataFrame\nsummary_df = pd.DataFrame(summary_data)\n\n# Export the summary to a CSV file\nsummary_df.to_csv('summary_table.csv', index=False)\n\n# Plot the histogram of band_gap distribution\nplt.figure(figsize=(10, 6))\nplt.hist(summary_df['band_gap'], bins=10, color='skyblue', edgecolor='black')\nplt.title('Histogram of Band Gap Distribution')\nplt.xlabel('Band Gap (eV)')\nplt.ylabel('Frequency')\nplt.grid(axis='y', alpha=0.75)\nplt.savefig('band_gap_histogram.png')\nplt.close()"
+    }
+  ],
+  "code_error": ""
+}

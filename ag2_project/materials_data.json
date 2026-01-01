@@ -1,0 +1,177 @@
+{
+  "query_explanation": "The user is asking for a list of oxide materials that have specific properties making them potentially useful for applications like electronics or photonics. The key term 'band_gap' refers to the energy difference between the highest occupied electronic band and the lowest unoccupied electronic band, with a range of 3\u20136 eV indicating wide bandgap materials suitable for high-power and high-frequency applications. The 'energy_above_hull' is a measure of the material's stability; a value of \u2264 0.05 eV typically suggests that the material is very close to its most stable form under equilibrium conditions. The user is seeking a summary of materials that fit these criteria, focusing on those that would likely be good candidates for further study or application.",
+  "materials": [
+    {
+      "material_id": "mp-1224736",
+      "formula_pretty": "MgNiB2P2(H3O4)4",
+      "key_properties": {
+        "band_gap": 4.5703,
+        "energy_above_hull": 0.001072053196771,
+        "density": 2.319036680389864,
+        "volume": 933.6971199944289
+      },
+      "stability_assessment": "Near-stable (<= 0.05 eV/atom); potentially synthesizable with suitable conditions.",
+      "application_inference": "Wide-bandgap regime; candidates for power electronics, high-field devices, and UV optoelectronics depending on other properties.",
+      "limitations_and_unknowns": [
+        "No direct/indirect gap, elastic moduli, thermal conductivity, or toxicity data in retrieved fields -> avoid over-claiming."
+      ],
+      "density_note": "Relatively low density; could be advantageous for weight-sensitive contexts (mechanical suitability unknown)."
+    },
+    {
+      "material_id": "mp-556070",
+      "formula_pretty": "Na5Gd(MoO4)4",
+      "key_properties": {
+        "band_gap": 3.3922,
+        "energy_above_hull": null,
+        "density": 4.112311992161791,
+        "volume": 736.4846603516414
+      },
+      "stability_assessment": "Energy above hull not available; stability cannot be assessed from this dataset.",
+      "application_inference": "Wide-bandgap regime; candidates for power electronics, high-field devices, and UV optoelectronics depending on other properties.",
+      "limitations_and_unknowns": [
+        "energy_above_hull missing -> stability assessment limited.",
+        "No direct/indirect gap, elastic moduli, thermal conductivity, or toxicity data in retrieved fields -> avoid over-claiming."
+      ],
+      "density_note": "Moderate density; typical for many ceramics/oxides/intermetallics (mechanical suitability unknown)."
+    },
+    {
+      "material_id": "mp-557756",
+      "formula_pretty": "Li4Zn(PO4)2",
+      "key_properties": {
+        "band_gap": 4.8068,
+        "energy_above_hull": 0.000123222833334,
+        "density": 2.767579397010451,
+        "volume": 679.4742301934657
+      },
+      "stability_assessment": "Near-stable (<= 0.05 eV/atom); potentially synthesizable with suitable conditions.",
+      "application_inference": "Wide-bandgap regime; candidates for power electronics, high-field devices, and UV optoelectronics depending on other properties.",
+      "limitations_and_unknowns": [
+        "No direct/indirect gap, elastic moduli, thermal conductivity, or toxicity data in retrieved fields -> avoid over-claiming."
+      ],
+      "density_note": "Moderate density; typical for many ceramics/oxides/intermetallics (mechanical suitability unknown)."
+    },
+    {
+      "material_id": "mp-680717",
+      "formula_pretty": "Tm(BO2)3",
+      "key_properties": {
+        "band_gap": 5.8407,
+        "energy_above_hull": null,
+        "density": 5.496894819583244,
+        "volume": 1437.2736829703963
+      },
+      "stability_assessment": "Energy above hull not available; stability cannot be assessed from this dataset.",
+      "application_inference": "Wide-bandgap regime; candidates for power electronics, high-field devices, and UV optoelectronics depending on other properties.",
+      "limitations_and_unknowns": [
+        "energy_above_hull missing -> stability assessment limited.",
+        "No direct/indirect gap, elastic moduli, thermal conductivity, or toxicity data in retrieved fields -> avoid over-claiming."
+      ],
+      "density_note": "Moderate density; typical for many ceramics/oxides/intermetallics (mechanical suitability unknown)."
+    },
+    {
+      "material_id": "mp-768598",
+      "formula_pretty": "Na2NiCSO7",
+      "key_properties": {
+        "band_gap": 3.0554,
+        "energy_above_hull": 0.03501061562498,
+        "density": 2.7394599216558673,
+        "volume": 632.2068422389633
+      },
+      "stability_assessment": "Near-stable (<= 0.05 eV/atom); potentially synthesizable with suitable conditions.",
+      "application_inference": "Wide-bandgap regime; candidates for power electronics, high-field devices, and UV optoelectronics depending on other properties.",
+      "limitations_and_unknowns": [
+        "No direct/indirect gap, elastic moduli, thermal conductivity, or toxicity data in retrieved fields -> avoid over-claiming."
+      ],
+      "density_note": "Moderate density; typical for many ceramics/oxides/intermetallics (mechanical suitability unknown)."
+    },
+    {
+      "material_id": "mp-2715277",
+      "formula_pretty": "Na6Zr3ZnSi2(PO6)4",
+      "key_properties": {
+        "band_gap": 3.7194000000000003,
+        "energy_above_hull": 0.032181737479166,
+        "density": 3.158364311941796,
+        "volume": 1642.0583571555321
+      },
+      "stability_assessment": "Near-stable (<= 0.05 eV/atom); potentially synthesizable with suitable conditions.",
+      "application_inference": "Wide-bandgap regime; candidates for power electronics, high-field devices, and UV optoelectronics depending on other properties.",
+      "limitations_and_unknowns": [
+        "No direct/indirect gap, elastic moduli, thermal conductivity, or toxicity data in retrieved fields -> avoid over-claiming."
+      ],
+      "density_note": "Moderate density; typical for many ceramics/oxides/intermetallics (mechanical suitability unknown)."
+    },
+    {
+      "material_id": "mp-1223327",
+      "formula_pretty": "La2CO5",
+      "key_properties": {
+        "band_gap": 4.012099999999999,
+        "energy_above_hull": 0.020839771458334003,
+        "density": 5.240978800839381,
+        "volume": 234.34488961433277
+      },
+      "stability_assessment": "Near-stable (<= 0.05 eV/atom); potentially synthesizable with suitable conditions.",
+      "application_inference": "Wide-bandgap regime; candidates for power electronics, high-field devices, and UV optoelectronics depending on other properties.",
+      "limitations_and_unknowns": [
+        "No direct/indirect gap, elastic moduli, thermal conductivity, or toxicity data in retrieved fields -> avoid over-claiming."
+      ],
+      "density_note": "Moderate density; typical for many ceramics/oxides/intermetallics (mechanical suitability unknown)."
+    },
+    {
+      "material_id": "mp-704238",
+      "formula_pretty": "Gd2Mo5O18",
+      "key_properties": {
+        "band_gap": 3.1154,
+        "energy_above_hull": 0.007943524499992001,
+        "density": 4.036077603984686,
+        "volume": 1780.9543030376467
+      },
+      "stability_assessment": "Near-stable (<= 0.05 eV/atom); potentially synthesizable with suitable conditions.",
+      "application_inference": "Wide-bandgap regime; candidates for power electronics, high-field devices, and UV optoelectronics depending on other properties.",
+      "limitations_and_unknowns": [
+        "No direct/indirect gap, elastic moduli, thermal conductivity, or toxicity data in retrieved fields -> avoid over-claiming."
+      ],
+      "density_note": "Moderate density; typical for many ceramics/oxides/intermetallics (mechanical suitability unknown)."
+    },
+    {
+      "material_id": "mp-2715675",
+      "formula_pretty": "NaHfTaSi(PO6)2",
+      "key_properties": {
+        "band_gap": 3.3579,
+        "energy_above_hull": 0.023509899444443,
+        "density": 4.24525172652512,
+        "volume": 1559.414171026266
+      },
+      "stability_assessment": "Near-stable (<= 0.05 eV/atom); potentially synthesizable with suitable conditions.",
+      "application_inference": "Wide-bandgap regime; candidates for power electronics, high-field devices, and UV optoelectronics depending on other properties.",
+      "limitations_and_unknowns": [
+        "No direct/indirect gap, elastic moduli, thermal conductivity, or toxicity data in retrieved fields -> avoid over-claiming."
+      ],
+      "density_note": "Moderate density; typical for many ceramics/oxides/intermetallics (mechanical suitability unknown)."
+    },
+    {
+      "material_id": "mp-1221202",
+      "formula_pretty": "Na4Br(ClO4)3",
+      "key_properties": {
+        "band_gap": 4.8747,
+        "energy_above_hull": 0.030323237250004003,
+        "density": 2.566497509095428,
+        "volume": 304.2318063380774
+      },
+      "stability_assessment": "Near-stable (<= 0.05 eV/atom); potentially synthesizable with suitable conditions.",
+      "application_inference": "Wide-bandgap regime; candidates for power electronics, high-field devices, and UV optoelectronics depending on other properties.",
+      "limitations_and_unknowns": [
+        "No direct/indirect gap, elastic moduli, thermal conductivity, or toxicity data in retrieved fields -> avoid over-claiming."
+      ],
+      "density_note": "Moderate density; typical for many ceramics/oxides/intermetallics (mechanical suitability unknown)."
+    }
+  ],
+  "overall_recommendation": {
+    "best_candidates": [
+      "mp-557756",
+      "mp-1224736"
+    ],
+    "rationale": [
+      "Ranking prioritizes lower energy_above_hull (stability) and availability of key fields for data-grounded inference.",
+      "Application inference is derived primarily from band_gap regimes; adjust retrieval fields if you need direct/indirect gap, is_metal, or transport properties."
+    ]
+  }
+}

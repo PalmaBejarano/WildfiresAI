@@ -231,3 +231,58 @@ RuntimeError: Function run_material_framework() not found. Please execute Cell 4
 [2025-10-21T18:22:47+00:00] AG2 pipeline completed successfully.
 [2025-10-21T18:22:47+00:00] ══════════ AG2 PIPELINE END ══════════
 [2025-10-28T12:11:03+00:00][manual] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-10-28T18:38:10+00:00][FrameworkB] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-10-28T18:38:10+00:00][FrameworkB] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-11-04T17:24:23+00:00][FrameworkB] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-11-04T17:26:13+00:00][FrameworkB] Running Framework A (Wildfire Intelligence)…
+[2025-11-04T17:26:14+00:00][FrameworkB] Framework A OK.
+[2025-11-04T17:26:14+00:00][FrameworkB] Running Framework B (Materials Intelligence)…
+[2025-11-04T17:26:14+00:00][FrameworkB] Context built: region=EUROPE, T=45.9°C, RH=35.0%, slope=10.0°
+[2025-11-04T17:26:14+00:00][FrameworkB] MP_API fallback: invalid fields requested: ['formation_energy_per_atom']. Available fields: ['builder_meta', 'nsites', 'elements', 'nelements', 'composition', 'composition_reduced', 'formula_pretty', 'formula_anonymous', 'chemsys', 'volume', 'density', 'density_atomic', 'symmetry', 'material_id', 'structure', 'deprecated', 'deprecation_reasons', 'initial_structures', 'task_ids', 'deprecated_tasks', 'calc_types', 'last_updated', 'created_at', 'origins', 'warnings', 'task_types', 'run_types', 'entries']
+[2025-11-04T17:26:14+00:00][FrameworkB] MaterialsAgent: 10 candidates (fallback)
+[2025-11-04T17:26:14+00:00][FrameworkB] Swarm plan created for 4 drones in north_sector
+[2025-11-04T17:26:14+00:00][FrameworkB] Simulation: efficiency=0.298, saved=990.5 ha
+[2025-11-04T17:26:14+00:00][FrameworkB] Actuation dispatched
+[2025-11-04T17:26:14+00:00][FrameworkB] Framework B OK.
+[2025-11-04T17:34:12+00:00][FrameworkB] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-11-04T17:34:50+00:00][FrameworkB] Running Framework A (Wildfire Intelligence)…
+[2025-11-04T17:34:51+00:00][FrameworkB] Framework A OK.
+[2025-11-04T17:34:51+00:00][FrameworkB] Running Framework B (Materials Intelligence)…
+[2025-11-04T17:34:51+00:00][FrameworkB] Context built: region=EUROPE, T=39.9°C, RH=35.0%, slope=10.0°
+[2025-11-04T18:37:32+00:00][FrameworkB] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, MaterialsCombinerAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-11-04T19:11:45+00:00][FrameworkB] ══════════ AG² PIPELINE START ══════════
+[2025-11-04T19:11:45+00:00][FrameworkB] Running Framework A (Wildfire Intelligence)…
+[2025-11-04T19:11:45+00:00][FrameworkB] Pipeline failed: run_wildfire_framework() got an unexpected keyword argument 'region'
+[2025-11-04T19:11:45+00:00][FrameworkB] Traceback (most recent call last):
+  File "/var/folders/wn/mpnj0v3s1_1fd88s9l4c9pth0000gn/T/ipykernel_1114/2100843501.py", line 214, in pipeline
+    A = self.run_A(**kwargs)
+  File "/var/folders/wn/mpnj0v3s1_1fd88s9l4c9pth0000gn/T/ipykernel_1114/2100843501.py", line 137, in run_A
+    text = globals()["run_wildfire_framework"](**kwargs)
+TypeError: run_wildfire_framework() got an unexpected keyword argument 'region'
+
+[2025-11-04T19:11:45+00:00][FrameworkB] ══════════ AG² PIPELINE END ══════════
+[2025-11-04T19:30:50+00:00][FrameworkB] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, MaterialsCombinerAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-11-04T19:31:08+00:00][FrameworkB] ══════════ AG² PIPELINE START ══════════
+[2025-11-04T19:31:08+00:00][FrameworkB] Running Framework A (Wildfire Intelligence)…
+[2025-11-04T19:31:08+00:00][FrameworkB] Framework A OK.
+[2025-11-04T19:31:08+00:00][FrameworkB] Running Framework B (Materials Intelligence)…
+[2025-11-04T19:31:08+00:00][FrameworkB] Context built: T=None°C RH=None% wind=None slope=10.0 veg=None weights={'w1': 0.38095238095238093, 'w2': 0.3333333333333333, 'w3': 0.2857142857142857}
+[2025-11-04T19:31:12+00:00][FrameworkB] MaterialsAgent: 12 base candidates (real, filtered)
+[2025-11-04T19:31:12+00:00][manual] Framework B error: TypeError → Object of type Element is not JSON serializable
+[2025-11-04T19:31:12+00:00][FrameworkB] Framework B OK.
+[2025-11-04T19:31:12+00:00][FrameworkB] AG² pipeline completed successfully.
+[2025-11-04T19:31:12+00:00][FrameworkB] ══════════ AG² PIPELINE END ══════════
+[2025-11-04T19:38:07+00:00][FrameworkB] Framework B agents initialized: MaterialsContextBuilder, MaterialsAgent, MaterialsCombinerAgent, SwarmPlannerAgent, SimAgent, ActuationAgent, CommAgent
+[2025-11-04T19:38:21+00:00][FrameworkB] ══════════ AG² PIPELINE START ══════════
+[2025-11-04T19:38:21+00:00][FrameworkB] Running Framework A (Wildfire Intelligence)…
+[2025-11-04T19:38:21+00:00][FrameworkB] Framework A OK.
+[2025-11-04T19:38:21+00:00][FrameworkB] Running Framework B (Materials Intelligence)…
+[2025-11-04T19:38:21+00:00][FrameworkB] Context built: T=None°C RH=None% wind=None slope=10.0 veg=None weights={'w1': 0.38095238095238093, 'w2': 0.3333333333333333, 'w3': 0.2857142857142857}
+[2025-11-04T19:38:25+00:00][FrameworkB] MaterialsAgent: 12 base candidates (real, filtered)
+[2025-11-04T19:38:25+00:00][FrameworkB] Combiner: 286 combos → top 12
+[2025-11-04T19:38:25+00:00][FrameworkB] Swarm plan created for 3 drones in ridge_zone
+[2025-11-04T19:38:25+00:00][FrameworkB] Simulation: efficiency=0.274, saved=1349.5 ha
+[2025-11-04T19:38:25+00:00][FrameworkB] Actuation dispatched
+[2025-11-04T19:38:25+00:00][FrameworkB] Framework B OK.
+[2025-11-04T19:38:25+00:00][FrameworkB] AG² pipeline completed successfully.
+[2025-11-04T19:38:25+00:00][FrameworkB] ══════════ AG² PIPELINE END ══════════
