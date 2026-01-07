@@ -1,253 +1,141 @@
-# WildfiresAI — AG2 Architecture (Predict → Act → Choose)
+# WildfiresAI — AG² Architecture (Controlled Multi-Agent Scientific Pipeline)
 
-**Author:** Palma Bejarano   
-**Mentor:** Dr. Alireza
+**Author:** Palma Bejarano  
+**Mentor:** Dr. Alireza Ghafarollahi (MIT)
 
-**Purpose:** This document describes the **AG2 architecture** of WildfiresAI, designed around a continuous **Predict → Act → Choose** cycle for wildfire prevention, containment, and mitigation.
+**Purpose:** This document describes the **implemented** AG² / AutoGen architecture of WildfiresAI, designed as a controlled multi-agent scientific pipeline with strict separation between explanation, retrieval, analysis, and code execution.
 
 ---
 
 ## 1. Overview
 
-WildfiresAI integrates **environmental intelligence** and **operational planning** to:
-1. **Predict** ignition and propagation (based on terrain, current and forecast weather, fire history, vegetation and maintenance, and human activity).  
-2. **Act** with containment and deployment strategies (rings/corridors), issuing **real-time alerts** to firefighters and the population.  
-3. **Choose** (optional) optimal materials (inorganic or gel-based) to reinforce the response.
+WildfiresAI is structured as a fixed multi-agent pipeline that emphasizes:
+
+- **Strict tool boundaries** (no data access without tools)
+- **Validated retrieval** (whitelists and schema-safe queries)
+- **Data-grounded analysis** (conclusions derived from retrieved values)
+- **Traceable computation** (optional code execution only through a controlled executor)
+- **Reproducibility** (artifacts persisted to disk)
+
+The pipeline is implemented in `Pipeline WildfiresAI.ipynb`.
 
 ---
 
-## 2. AG2 Dual-Framework
+## 2. Agent Order and Control Flow
 
-- **Framework A — Analysis & Planning (Think):** data ingestion, ignition risk calculation, spread forecasting, analog retrieval, and containment strategy.  
-- **Framework B — Execution & Tools (Act):** technical execution (queries, simulations, logistics, materials) and reporting.
+The pipeline follows a fixed order:
 
-**Coordinator:** A→B bridge that packages **self-contained JSON payloads** and manages **handoffs** between agents (via tools, LLM conditions, or context state).
+**Human → Agent A → Agent B → Agent C → Agent D → Human**
 
----
-
-## 3. Data Flow
-
-![Workflow](../figs/AG2_Flowchart.png)
-
-
-
-**Logical flow (vertical):**  
-`User → Scientist → Planner → Coder → Writer`  
-with **feedback loops** `Coder → Planner` and `Writer → Scientist`.
+There are no hidden loops. Any iteration (e.g., reformulating a query) is explicit and user-driven.
 
 ---
 
-## 4. Agents (roles and I/O)
+## 3. Roles and Boundaries
 
-| Agent | Framework | Role | Input | Output |
-|---|---|---|---|---|
-| **DataAgentWildfire** | A | Ingest FIRMS/EFFIS/NIFC and weather data | APIs | Raw datasets |
-| **GeoTerrainAgent** | A | Compute elevation/slope + landcover | DEM, WorldCover | `slope`, `landcover` |
-| **HumanActivityAgent** | A | Human pressure (camping, holidays, outliers) | POIs, calendar | `human_outlier_score`, `camping_proximity` |
-| **VegConditionAgent** | A | Vegetation/maintenance condition | NDVI/NDMI, firebreaks | `fuel_continuity`, `maintenance_proxy` |
-| **FireHistoryAgent** | A | Historical wildfire database | Archives | `history_db` |
-| **AnalogFinderAgent** | A | Analog search by multivariate similarity | `x_now`, `history_db` | `analog_support` |
-| **IgnitionRiskAgent** | A | Ignition probability (24–48h) | Fused features | `ignition_risk.json` |
-| **ForecastAgent** | A | Spread forecast (ROS, perimeter t+Δ) with analogs | State + forecast | `fire_forecast.json` |
-| **StrategyAgent** | A | Containment plan (rings/corridors/priorities) | `fire_forecast`, context | `plan_containment.json` |
-| **Coordinator** | Bridge | Gateway A→B (validate/normalize payloads) | Outputs A | Payloads B |
-| **SwarmPlannerAgent** | B | Deployment trajectories and logistics | `plan_containment` | `deployment_plan.json` |
-| **SimAgent** | B | Simulation-in-the-loop (ΔROS/area) | Plan + forecast | Validation/adjustments |
-| **ActuationAgent** | B | Drone/robot/fire team interface | Plan | Commands |
-| **MaterialsContextBuilder** | B | Material requirements from plan | Plan + environment | `materials_requirements.json` |
-| **MaterialsAgent** | B | Select top-10 materials (MP-API) | `materials_requirements` | `materials_top10.csv` |
-| **Writer/CommAgent** | B | Reports/alerts to firefighters/public | Artifacts | markdown/alerts |
+### Agent A — Explainer (Interpretation only)
+**Responsibilities**
+- Interpret the user request.
+- Formalize the question in scientific terms.
+- Define the information needs and constraints for retrieval.
+
+**Not allowed**
+- No external data access.
+- No conclusions based on unknown values.
+
+**Output**
+- A structured, concise interpretation passed through shared context variables.
 
 ---
 
-## 5. Predict → Act → Choose (Behavior)
+### Agent B — Materials Retriever (Data access with hard constraints)
+**Responsibilities**
+- Translate Agent A’s interpretation into a **strictly valid Materials Project query**.
+- Enforce **hard whitelists** for:
+  - allowed `search_criteria`
+  - allowed `fields`
+- Fail loudly on unsupported filters instead of silently inventing or correcting them.
+- Store raw results in shared context variables.
 
-### 5.1 Predict (Risk + Propagation)
-**Goal:** Detect imminent ignition and predict spread considering **history + weather (current and forecast) + human activity + terrain + wind + vegetation + maintenance + drought.**
+**Data source (current core pipeline)**
+- **Materials Project API** (via `MP_API_KEY` provided locally)
 
-**Features per cell (example):**
-- History: `ignition_density_3y`, `analog_support` (k cases)  
-- Weather/forecast: `temp`, `rh`, `wind_u/v`, `gust`, `rain_12h`, `Δwind`  
-- Terrain/fuel: `slope`, `aspect`, `elev`, `landcover_onehot`, `fuel_continuity`  
-- Vegetation/state: `NDVI`, `NDMI`, `dryness_idx`, `maintenance_proxy`  
-- Human activity: `camping_proximity`, `weekend_or_holiday`, `human_outlier_score`  
-- Drought: `drought_idx`
-
-**Models (MVP):**
-- *Ignition:* Calibrated GBDT → `p_ignition (24–48h)`  
-- *Spread:* `ROS_base(X)` adjusted by analogs:  
-  \[
-  \widehat{ROS} = \alpha\,ROS_{base} + (1-\alpha)\sum \omega_i ROS_i
-  \]
-*Estimated ROS (alternative text):* ROŜ = α·ROS_base + (1–α)·Σ(ωᵢ·ROSᵢ)
-
-
-
-**Replanning:** every 10–15 min or when wind changes (`Δdir≥25°`, `Δvel≥10 km/h`) or human activity spikes.
+**Output**
+- Raw materials results and retrieval metadata in shared context.
 
 ---
 
-### 5.2 Act (Containment + Deployment + Alerts)
-**Goal:** If a fire (or high risk) exists, **plan** how to **surround/stop** it and **alert** (firefighters/public), comparing **then vs now**.
+### Agent C — Analyzer (Scientific analysis, no retrieval)
+**Responsibilities**
+- Perform **data-grounded** analysis of retrieved materials.
+- Interpret quantitative fields (e.g., `band_gap`, `energy_above_hull`, `density`) to produce a scientific summary.
+- Rank or shortlist candidates using explicit criteria.
+- Emit a **strict JSON output** (no free-form narrative).
 
-**Strategy (initial heuristics):**
-- Ring/corridor priority:  
-  `score = w_ros*ROS + w_hum*human_risk + w_veg*fuel_continuity + w_val*protected_value`
-- Thickness:  
-  `thickness_mm = base + k1*ROS + k2*(1 - maintenance_level)`
-- Considers analog patterns (slope + wind) **and** current human activity.
+**Not allowed**
+- No external retrieval.
+- No hallucinated properties or unsupported claims.
 
-**SimAgent:** validates ROS/area reduction; if `ΔROS < 30%`, reoptimizes.
-
-**Alerts:**  
-- Firefighters: tactical actions (priority zones, ETA, estimated use).  
-- Population: areas to avoid, forecasted evolution.
+**Persistence**
+- Writes structured outputs to disk (e.g., `materials_data.json`) for reproducibility.
 
 ---
 
-### 5.3 Choose (Materials)
-**Goal:** Select optimal material(s) when required by the plan.  
-- `MaterialsContextBuilder`: defines `thermal_target`, `adhesion`, `viscosity`, `reapply_hours`, **safety for public areas**.  
-- `MaterialsAgent`: filters by `energy_above_hull ≤ 0.1`, presence of oxygen, density, bandgap, thermal stability, and low toxicity.
+### Agent D — Python Coder (Controlled execution only)
+**Responsibilities**
+- Execute Python code **only** through a controlled tool or executor.
+- Typical tasks:
+  - export CSV summaries
+  - generate plots (e.g., band gap distributions)
+  - serialize intermediate results
+
+**Execution constraints**
+- No direct code execution outside the tool.
+- All executed code and outputs are persisted (e.g., under `ag2_project/`).
 
 ---
 
-## 6. Payload Schemas (pydantic-friendly)
+## 4. Data Provenance and Reproducibility
 
-### 6.1 `reports/ignition_risk.json`
-```json
-{
-  "generated_utc": "ISO8601",
-  "horizon_h": 24,
-  "grid": [
-    {
-      "cell_id": "str",
-      "lat": 0.0,
-      "lon": 0.0,
-      "p_ignition": 0.0,
-      "top_drivers": ["low_humidity", "camp_area", "high_slope"],
-      "human_activity": {
-        "camping_proximity_m": 0,
-        "weekend_or_holiday": true,
-        "human_outlier_score": 0.0
-      },
-      "veg_condition": {
-        "ndvi": 0.0,
-        "dryness_idx": 0.0,
-        "fuel_continuity": "low|medium|high",
-        "maintenance_proxy": "low|medium|high"
-      }
-    }
-  ],
-  "hotspots": [
-    { "center": "POINT(...)", "p_ignition": 0.0, "reason": "string" }
-  ],
-  "analogs": [
-    { "fire_id": "H-YYYY-XXX", "sim": 0.0, "top_factors": ["..."] }
-  ]
-}
-```
+The repository does not version large datasets or secrets.
 
-### 6.2 `reports/fire_forecast.json`
-```json
-{
-  "fires": [
-    {
-      "id": "F-YYYY-XXX",
-      "now_perimeter": "GEOJSON",
-      "forecast": [
-        {
-          "t_h": 1,
-          "perimeter": "GEOJSON",
-          "spread_vectors": [
-            { "azimuth_deg": 0, "ros_m_min": 0.0 }
-          ]
-        },
-        { "t_h": 3, "perimeter": "GEOJSON" }
-      ],
-      "uncertainty": { "p80": "GEOJSON" },
-      "analog_support": {
-        "k": 10,
-        "weighted_ros_m_min": 0.0,
-        "weighted_heading_deg": 0.0,
-        "cases": [
-          { "fire_id": "H-YYYY-XXX", "weight": 0.0, "ros": 0.0, "heading": 0.0 }
-        ]
-      }
-    }
-  ]
-}
-```
+- Secrets are provided locally via `.env` (never committed).
+- Public templates are documented in `.env.example`.
+- Data handling policy is documented in `docs/DATA.md`.
 
-### 6.3 `reports/plan_containment.json`
-```json
-{
-  "objectives": ["encircle", "slow_spread"],
-  "rings": [
-    { "geom": "GEOJSON", "width_m": 0, "priority": 1 }
-  ],
-  "corridors": [
-    { "path": "LINESTRING(...)", "width_m": 0 }
-  ],
-  "constraints": {
-    "no_go": "GEOJSON",
-    "max_slope_deg": 35
-  },
-  "score_weights": {
-    "w_ros": 0.4,
-    "w_hum": 0.3,
-    "w_veg": 0.2,
-    "w_val": 0.1
-  }
-}
-```
-
-### 6.4 `reports/deployment_plan.json`
-```json
-{
-  "timestamp_utc": "ISO8601",
-  "planner_agent": "SwarmPlannerAgent",
-  "plan_id": "D-YYYY-XXX",
-  "paths": [
-    {
-      "unit_id": "U-01",
-      "path": "LINESTRING(...)",
-      "eta_min": 15,
-      "fuel_use_l": 12.3,
-      "priority": 1
-    }
-  ],
-  "resources": {
-    "water_l": 5000,
-    "gel_kg": 150,
-    "teams": 3
-  }
-}
-```
-
-### 6.5 `reports/materials_top10.csv`
-```csv
-material_id,formula,energy_above_hull,density,band_gap,stability,notes
-mp-1234,AcCuO3,0.05,6.1,2.5,stable,good thermal resistance
-mp-1235,AcNiO3,0.04,6.3,1.8,stable,fireproof oxide
-mp-1236,AcGaO3,0.09,5.8,3.0,meta-stable,good adhesion
-```
+The architecture is designed so that:
+- **retrieval can be replayed** from the same query constraints,
+- **analysis is reproducible** from persisted artifacts,
+- and **outputs are inspectable** without relying on hidden model state.
 
 ---
 
-## 7. Future Work & Integration
+## 5. Artifact Outputs (Expected)
 
-### 7.1 Feedback & Continuous Learning
-- Implement **retraining loops** based on new fire outcomes (`SimAgent` + `ForecastAgent` feedback).  
-- Add **human-in-the-loop validation** for local authorities (manual overrides and context tagging).  
-- Store successful analog cases in `history_db` for model refinement.
+Depending on the run configuration, the pipeline may generate:
 
-### 7.2 Integration with Realtime Systems
-- Connect to **Open-Meteo WebSocket** for live wind and humidity streams.  
-- Enable **auto-refresh** of ignition and spread predictions every 10–15 minutes.  
-- Deploy `CommAgent` for live alerts to emergency networks.
+- `materials_data.json`  
+  Structured analysis output produced by Agent C.
 
-### 7.3 Long-Term Extensions
-- Multi-agent reinforcement loop for **autonomous planning under uncertainty**.  
-- Link with drone fleet AI (`ActuationAgent`) for **smart containment gel deployment**.  
-- Integration with **bio-based material database** (next-gen WildfireGel).
+- `ag2_project/`  
+  Controlled execution artifacts from Agent D (scripts, plots, CSVs, logs).
+
+- `figs/`, `reports/`  
+  Optional exported figures and lightweight reports.
+
+The repository remains lightweight by design; raw external data is treated as an input, not a tracked asset.
+
+---
+
+## 6. Design Rationale
+
+The multi-agent separation is a deliberate engineering choice to avoid common failure modes in LLM systems:
+
+- **Hidden reasoning:** prevented by explicit routing and strict boundaries.
+- **Hallucinated data:** prevented by tool-only retrieval and value-grounded analysis.
+- **Silent schema drift:** prevented by hard whitelists and validation.
+- **Untraceable computation:** prevented by controlled code execution and persisted outputs.
+
+
+
+
