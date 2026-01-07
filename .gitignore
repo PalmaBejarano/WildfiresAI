@@ -6,3 +6,8 @@ wildfire_data_analysis.ipynb
 
 .DS_Store
 .ipynb_checkpoints/
+
+# Secrets
+.env
+.env.*
+!.env.example
