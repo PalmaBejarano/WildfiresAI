@@ -11,3 +11,6 @@ wildfire_data_analysis.ipynb
 .env
 .env.*
 !.env.example
+
+# Data (local, not versioned)
+data/raw/
