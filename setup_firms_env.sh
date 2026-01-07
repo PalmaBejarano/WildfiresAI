@@ -27,8 +27,4 @@ mk_firms_4 SOUTH_AMERICA "-85,-57,-32,14"
 mk_firms_4 CENTRAL_AMERICA "-118,5,-77,33"
 mk_firms_4 AUSTRALIA_NZ "110,-50,180,0"
 
-conda deactivate
-conda activate base
-echo "✅ FIRMS variables configuradas."
-conda env config vars list | grep '^FIRMS_' | wc -l
 
