@@ -3,7 +3,7 @@
 **Author:** Palma Bejarano  
 **Mentor:** Dr. Alireza Ghafarollahi (MIT)
 
-**Purpose:** This document describes the **implemented** AG² / AutoGen architecture of WildfiresAI, designed as a controlled multi-agent scientific pipeline with strict separation between explanation, retrieval, analysis, and code execution.
+**Purpose:** This document describes the implemented AG² / AutoGen architecture of WildfiresAI, designed as a controlled multi-agent scientific pipeline with strict separation between explanation, retrieval, analysis, and code execution.
 
 ---
 
@@ -50,8 +50,8 @@ There are no hidden loops. Any iteration (e.g., reformulating a query) is explic
 
 ### Agent B — Materials Retriever (Data access with hard constraints)
 **Responsibilities**
-- Translate Agent A’s interpretation into a **strictly valid Materials Project query**.
-- Enforce **hard whitelists** for:
+- Translate Agent A’s interpretation into a valid Materials Project query.
+- Enforce hard whitelists for:
   - allowed `search_criteria`
   - allowed `fields`
 - Fail loudly on unsupported filters instead of silently inventing or correcting them.
@@ -67,10 +67,10 @@ There are no hidden loops. Any iteration (e.g., reformulating a query) is explic
 
 ### Agent C — Analyzer (Scientific analysis, no retrieval)
 **Responsibilities**
-- Perform **data-grounded** analysis of retrieved materials.
+- Perform data-grounded analysis of retrieved materials.
 - Interpret quantitative fields (e.g., `band_gap`, `energy_above_hull`, `density`) to produce a scientific summary.
 - Rank or shortlist candidates using explicit criteria.
-- Emit a **strict JSON output** (no free-form narrative).
+- Emit a JSON output.
 
 **Not allowed**
 - No external retrieval.
@@ -83,7 +83,7 @@ There are no hidden loops. Any iteration (e.g., reformulating a query) is explic
 
 ### Agent D — Python Coder (Controlled execution only)
 **Responsibilities**
-- Execute Python code **only** through a controlled tool or executor.
+- Execute Python code only through a controlled tool or executor.
 - Typical tasks:
   - export CSV summaries
   - generate plots (e.g., band gap distributions)
