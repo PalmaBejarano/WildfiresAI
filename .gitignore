@@ -14,3 +14,11 @@ wildfire_data_analysis.ipynb
 
 # Data (local, not versioned)
 data/raw/
+
+# Local derived datasets (do not version)
+data/processed/*.parquet
+
+# Runtime outputs (do not version)
+ag2_project/*
+!ag2_project/.gitkeep
+
