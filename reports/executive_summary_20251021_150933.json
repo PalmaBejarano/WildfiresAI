@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-10-21T15:09:33",
-  "summaries": {
-    "materials": "[Materials] 10 candidates selected",
-    "swarm": "[Swarm] 8 drones deployed in valley_edge",
-    "simulation": "[Simulation] efficiency=0.5 saved=3225.2→1612.6 ha"
-  },
-  "status": "ok"
-}
