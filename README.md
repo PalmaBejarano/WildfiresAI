@@ -81,7 +81,9 @@ Human → Agent A → Agent B → Agent C → Agent D → Human
 
 ```
 WildfiresAI/
-├── ag2_project/        # Generated artifacts (JSON, CSV, plots, executed code)
+├── ag2_project/        # Runtime execution directory (ignored; no versioned outputs)
+├── examples/
+│   └── example_run/    # Versioned example outputs (JSON, CSV, plots)
 ├── data/
 │   └── processed/     # Versioned, lightweight derived data only
 ├── docs/
@@ -95,14 +97,18 @@ WildfiresAI/
 
 
 
-Raw data (e.g. large DEM tiles or CSV dumps) is **explicitly excluded**
-from version control.
+Raw data (e.g. large DEM tiles or CSV dumps) and runtime execution
+artifacts are explicitly excluded from version control.
+
+Only lightweight, curated example outputs are versioned under
+`examples/` for inspection and reproducibility.
+
 
 ---
 
 ## Environment variables
 
-All secrets are supplied **locally only**.
+All secrets are supplied locally only.
 
 Create a `.env` file from the provided template:
 
