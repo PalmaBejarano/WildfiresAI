@@ -1,6 +1,10 @@
 # WildfiresAI
 
-WildfiresAI is an independent research project exploring how controlled multi-agent AI systems can support transparent scientific reasoning in domains where physical constraints and real-world data matter.
+![GitHub stars](https://img.shields.io/github/stars/PalmaBejarano/WildfiresAI)
+![GitHub forks](https://img.shields.io/github/forks/PalmaBejarano/WildfiresAI)
+![Repo Views](https://komarev.com/ghpvc/?username=PalmaBejarano&repo=WildfiresAI)
+
+WildfiresAI is an independent research project exploring how controlled multi-agent AI systems can support transparent scientific workflows in domains where physical constraints and real-world data matter.
 
 The repository implements an experimental pipeline built with AG² / AutoGen, combining:
 
