@@ -14,11 +14,11 @@ A few weeks later, it was closer. Spain was burning.
 
 Despite the growing frequency and intensity of wildfires, there have been very few fundamental changes in wildfire response technology in recent decades. Firefighters are still required to enter rapidly evolving fire fronts with limited real-time analytical support. People die because of this gap.
 
-This project emerged from a simple and concrete question: **how can computational systems help humans reason better about wildfires without obscuring uncertainty or replacing human judgment?**
+This project emerged from a simple and concrete question: how can computational systems help humans reason better about wildfires without obscuring uncertainty or replacing human judgment?
 
 WildfiresAI is not designed to extinguish fires autonomously. Software does not put out a fire. But software can help interpret complex, dynamic conditions, integrate heterogeneous data, and surface structured reasoning that supports human decision-making in extreme environments.
 
-To explore this idea, the project interfaces with the **Materials Project**, a scientific materials database maintained by Lawrence Berkeley National Laboratory. Rather than merely selecting single “best” materials, the system explores combinations of materials and property trade-offs, investigating how different material behaviors could interact with environmental constraints in fire-prone scenarios. This materials reasoning component is treated as part of a broader analytical framework, not as a deployed solution.
+To explore this idea, the project interfaces with the Materials Project, a scientific materials database maintained by Lawrence Berkeley National Laboratory. Rather than merely selecting single “best” materials, the system explores combinations of materials and property trade-offs, investigating how different material behaviors could interact with environmental constraints in fire-prone scenarios. This materials reasoning component is treated as part of a broader analytical framework, not as a deployed solution.
 
 ---
 
@@ -52,7 +52,7 @@ The broader WildfiresAI research direction is modular by design. The same archit
 
 ## Independent Work
 
-WildfiresAI has been developed as an independent research project under mentorship, without reliance on proprietary datasets or opaque models. The project has been mentored by **Dr. Alireza Ghafarollahi**, a postdoctoral researcher at **MIT**, who provided guidance on system design, scientific rigor, and architectural decisions.
+WildfiresAI has been developed as an independent research project under mentorship, without reliance on proprietary datasets or opaque models. The project has been mentored by Dr. Alireza Ghafarollahi, a postdoctoral researcher at MIT, who provided guidance on system design, scientific rigor, and architectural decisions.
 
 All architectural decisions, validation rules, and analysis logic are explicitly documented. The project reflects an emphasis on intellectual ownership, reproducibility, and responsible use of AI in high-stakes physical contexts.
 
