@@ -22,3 +22,8 @@ data/processed/*.parquet
 ag2_project/*
 !ag2_project/.gitkeep
 
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
