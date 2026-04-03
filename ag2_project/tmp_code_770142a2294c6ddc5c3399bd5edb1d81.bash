@@ -1,0 +1,1 @@
+tectonic --keep-logs --keep-intermediates "paper.tex"

@@ -1,0 +1,28 @@
+{
+  "plots_v2": [
+    {
+      "plot_id": "plot_2",
+      "name": "plot_2_density_vs_band_gap.png",
+      "path": "plots_v2/plot_2_density_vs_band_gap.png",
+      "description": "Scatter plot of density vs band gap showing coverage of insulating properties across material densities."
+    },
+    {
+      "plot_id": "plot_3",
+      "name": "plot_3_density_vs_energy_above_hull.png",
+      "path": "plots_v2/plot_3_density_vs_energy_above_hull.png",
+      "description": "Scatter plot of density vs energy above hull illustrating stability across densities."
+    },
+    {
+      "plot_id": "plot_4",
+      "name": "plot_4_histogram_of_energy_above_hull.png",
+      "path": "plots_v2/plot_4_histogram_of_energy_above_hull.png",
+      "description": "Histogram depicting the distribution of energy above hull values among materials."
+    },
+    {
+      "plot_id": "plot_5",
+      "name": "plot_5_histogram_of_band_gap.png",
+      "path": "plots_v2/plot_5_histogram_of_band_gap.png",
+      "description": "Histogram showing the distribution of band gap values amongst the materials."
+    }
+  ]
+}

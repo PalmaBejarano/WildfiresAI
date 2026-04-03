@@ -1,0 +1,34 @@
+{
+  "plots_v1": [
+    {
+      "plot_id": "plot_1",
+      "name": "plot_1_scatter_plot_of_band_gap_vs_energy_above_hull.png",
+      "path": "plots/v1/plot_1_scatter_plot_of_band_gap_vs_energy_above_hull.png",
+      "description": "This plot shows the relationship between band gap and energy above hull for materials."
+    },
+    {
+      "plot_id": "plot_2",
+      "name": "plot_2_scatter_plot_of_density_vs_band_gap.png",
+      "path": "plots/v1/plot_2_scatter_plot_of_density_vs_band_gap.png",
+      "description": "This plot shows the relationship between density and band gap for materials."
+    },
+    {
+      "plot_id": "plot_3",
+      "name": "plot_3_scatter_plot_of_density_vs_energy_above_hull.png",
+      "path": "plots/v1/plot_3_scatter_plot_of_density_vs_energy_above_hull.png",
+      "description": "This plot shows the relationship between density and energy above hull for materials."
+    },
+    {
+      "plot_id": "plot_4",
+      "name": "plot_4_histogram_of_band_gap.png",
+      "path": "plots/v1/plot_4_histogram_of_band_gap.png",
+      "description": "Histogram displaying distribution of band gaps among materials."
+    },
+    {
+      "plot_id": "plot_5",
+      "name": "plot_5_histogram_of_energy_above_hull.png",
+      "path": "plots/v1/plot_5_histogram_of_energy_above_hull.png",
+      "description": "Histogram displaying distribution of energies above hull among materials."
+    }
+  ]
+}

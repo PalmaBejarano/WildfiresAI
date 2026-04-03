@@ -1,0 +1,49 @@
+{
+  "search_criteria": {
+    "energy_above_hull": [
+      0.0,
+      0.05
+    ],
+    "band_gap": [
+      3.0,
+      20.0
+    ],
+    "density": [
+      3.0,
+      10.0
+    ],
+    "exclude_elements": [
+      "Pb",
+      "Cd",
+      "Hg"
+    ]
+  },
+  "normalized_criteria": {
+    "energy_above_hull": [
+      0.0,
+      0.05
+    ],
+    "band_gap": [
+      3.0,
+      20.0
+    ],
+    "density": [
+      3.0,
+      10.0
+    ],
+    "exclude_elements": [
+      "Pb",
+      "Cd",
+      "Hg"
+    ]
+  },
+  "fields": [
+    "material_id",
+    "formula_pretty",
+    "band_gap",
+    "energy_above_hull",
+    "density"
+  ],
+  "sample_number_requested": 100,
+  "sample_number_returned": 100
+}

@@ -1,0 +1,100 @@
+{
+  "plot_selected_ids": [
+    "plot_1",
+    "plot_2",
+    "plot_3",
+    "plot_4",
+    "plot_5"
+  ],
+  "plot_selected": [
+    {
+      "plot_id": "plot_1",
+      "title": "Scatter Plot of Band Gap vs Energy Above Hull",
+      "description": "This plot shows the relationship between band gap and energy above hull for materials.",
+      "data_requirements": [
+        "band_gap",
+        "energy_above_hull"
+      ],
+      "axes": {
+        "type": "2d",
+        "x": "energy_above_hull",
+        "y": "band_gap",
+        "z": null,
+        "intensity": null
+      },
+      "plot_type": "scatter_2d",
+      "rationale": "Visualizing the stability (energy above hull) against electronic band gap can help identify potential materials that balance stability with insulating properties."
+    },
+    {
+      "plot_id": "plot_2",
+      "title": "Scatter Plot of Density vs Band Gap",
+      "description": "This plot shows the relationship between density and band gap for materials.",
+      "data_requirements": [
+        "band_gap",
+        "density"
+      ],
+      "axes": {
+        "type": "2d",
+        "x": "density",
+        "y": "band_gap",
+        "z": null,
+        "intensity": null
+      },
+      "plot_type": "scatter_2d",
+      "rationale": "Understanding the link between density and band gap assists in selecting materials that are both dense enough and have appropriate insulating properties."
+    },
+    {
+      "plot_id": "plot_3",
+      "title": "Scatter Plot of Density vs Energy Above Hull",
+      "description": "This plot shows the relationship between density and energy above hull for materials.",
+      "data_requirements": [
+        "density",
+        "energy_above_hull"
+      ],
+      "axes": {
+        "type": "2d",
+        "x": "density",
+        "y": "energy_above_hull",
+        "z": null,
+        "intensity": null
+      },
+      "plot_type": "scatter_2d",
+      "rationale": "This visualization aids in identifying materials that optimize density without compromising stability."
+    },
+    {
+      "plot_id": "plot_4",
+      "title": "Histogram of Band Gap",
+      "description": "Histogram displaying distribution of band gaps among materials.",
+      "data_requirements": [
+        "band_gap"
+      ],
+      "axes": {
+        "type": "hist",
+        "x": "band_gap",
+        "y": null,
+        "z": null,
+        "intensity": null
+      },
+      "plot_type": "histogram",
+      "rationale": "Analyzing the distribution of band gaps helps in assessing the electronic properties of materials."
+    },
+    {
+      "plot_id": "plot_5",
+      "title": "Histogram of Energy Above Hull",
+      "description": "Histogram displaying distribution of energies above hull among materials.",
+      "data_requirements": [
+        "energy_above_hull"
+      ],
+      "axes": {
+        "type": "hist",
+        "x": "energy_above_hull",
+        "y": null,
+        "z": null,
+        "intensity": null
+      },
+      "plot_type": "histogram",
+      "rationale": "This histogram helps in understanding the stability distribution within the materials set."
+    }
+  ],
+  "selection_notes": "Selected plots focus on main task criteria: stability, band gap, and density. Three scatter plots provide direct pairwise comparisons aiding selection of materials. Two histograms offer robust distribution insights on properties."
+}

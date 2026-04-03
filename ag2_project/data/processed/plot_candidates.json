@@ -1,0 +1,186 @@
+{
+  "plot_candidates_count": 10,
+  "plot_candidates": [
+    {
+      "plot_id": "plot_1",
+      "title": "Scatter Plot of Band Gap vs Energy Above Hull",
+      "description": "This plot shows the relationship between band gap and energy above hull for materials.",
+      "data_requirements": [
+        "band_gap",
+        "energy_above_hull"
+      ],
+      "axes": {
+        "type": "2d",
+        "x": "energy_above_hull",
+        "y": "band_gap",
+        "z": null,
+        "intensity": null
+      },
+      "rationale": "Visualizing the stability (energy above hull) against electronic band gap can help identify potential materials that balance stability with insulating properties.",
+      "plot_type": "scatter_2d"
+    },
+    {
+      "plot_id": "plot_2",
+      "title": "Scatter Plot of Density vs Band Gap",
+      "description": "This plot shows the relationship between density and band gap for materials.",
+      "data_requirements": [
+        "band_gap",
+        "density"
+      ],
+      "axes": {
+        "type": "2d",
+        "x": "density",
+        "y": "band_gap",
+        "z": null,
+        "intensity": null
+      },
+      "rationale": "Understanding the link between density and band gap assists in selecting materials that are both dense enough and have appropriate insulating properties.",
+      "plot_type": "scatter_2d"
+    },
+    {
+      "plot_id": "plot_3",
+      "title": "Scatter Plot of Density vs Energy Above Hull",
+      "description": "This plot shows the relationship between density and energy above hull for materials.",
+      "data_requirements": [
+        "density",
+        "energy_above_hull"
+      ],
+      "axes": {
+        "type": "2d",
+        "x": "density",
+        "y": "energy_above_hull",
+        "z": null,
+        "intensity": null
+      },
+      "rationale": "This visualization aids in identifying materials that optimize density without compromising stability.",
+      "plot_type": "scatter_2d"
+    },
+    {
+      "plot_id": "plot_4",
+      "title": "Histogram of Band Gap",
+      "description": "Histogram displaying distribution of band gaps among materials.",
+      "data_requirements": [
+        "band_gap"
+      ],
+      "axes": {
+        "type": "hist",
+        "x": "band_gap",
+        "y": null,
+        "z": null,
+        "intensity": null
+      },
+      "rationale": "Analyzing the distribution of band gaps helps in assessing the electronic properties of materials.",
+      "plot_type": "histogram"
+    },
+    {
+      "plot_id": "plot_5",
+      "title": "Histogram of Energy Above Hull",
+      "description": "Histogram displaying distribution of energies above hull among materials.",
+      "data_requirements": [
+        "energy_above_hull"
+      ],
+      "axes": {
+        "type": "hist",
+        "x": "energy_above_hull",
+        "y": null,
+        "z": null,
+        "intensity": null
+      },
+      "rationale": "This histogram helps in understanding the stability distribution within the materials set.",
+      "plot_type": "histogram"
+    },
+    {
+      "plot_id": "plot_6",
+      "title": "Histogram of Density",
+      "description": "Histogram displaying distribution of densities among materials.",
+      "data_requirements": [
+        "density"
+      ],
+      "axes": {
+        "type": "hist",
+        "x": "density",
+        "y": null,
+        "z": null,
+        "intensity": null
+      },
+      "rationale": "Helps identify the range and common values of densities, crucial for material selection.",
+      "plot_type": "histogram"
+    },
+    {
+      "plot_id": "plot_7",
+      "title": "3D Scatter of Band Gap, Energy Above Hull, and Density",
+      "description": "3D scatter showing the relationship among band gap, energy above hull, and density.",
+      "data_requirements": [
+        "band_gap",
+        "energy_above_hull",
+        "density"
+      ],
+      "axes": {
+        "type": "3d",
+        "x": "band_gap",
+        "y": "energy_above_hull",
+        "z": "density",
+        "intensity": null
+      },
+      "rationale": "Combining all three dimensions gives a holistic view of the material's properties.",
+      "plot_type": "scatter_3d"
+    },
+    {
+      "plot_id": "plot_8",
+      "title": "3D Scatter of Energy Above Hull, Density, and Band Gap",
+      "description": "3D scatter showing the relationship among energy above hull, density, and band gap.",
+      "data_requirements": [
+        "energy_above_hull",
+        "density",
+        "band_gap"
+      ],
+      "axes": {
+        "type": "3d",
+        "x": "energy_above_hull",
+        "y": "density",
+        "z": "band_gap",
+        "intensity": null
+      },
+      "rationale": "Different axis orientations help to identify trends or clustering in multi-dimensional space.",
+      "plot_type": "scatter_3d"
+    },
+    {
+      "plot_id": "plot_9",
+      "title": "3D Scatter of Density, Band Gap, and Energy Above Hull",
+      "description": "3D scatter plot showing the relationships of density, band gap, and energy above hull.",
+      "data_requirements": [
+        "density",
+        "band_gap",
+        "energy_above_hull"
+      ],
+      "axes": {
+        "type": "3d",
+        "x": "density",
+        "y": "band_gap",
+        "z": "energy_above_hull",
+        "intensity": null
+      },
+      "rationale": "Exploring different 3D arrangements provides insights into multi-property interrelations.",
+      "plot_type": "scatter_3d"
+    },
+    {
+      "plot_id": "plot_10",
+      "title": "Alternate 3D Scatter of Band Gap, Density, and Energy Above Hull",
+      "description": "3D scatter plot offering a different perspective using band gap first.",
+      "data_requirements": [
+        "band_gap",
+        "density",
+        "energy_above_hull"
+      ],
+      "axes": {
+        "type": "3d",
+        "x": "band_gap",
+        "y": "density",
+        "z": "energy_above_hull",
+        "intensity": null
+      },
+      "rationale": "Rotating axes increases understanding of how density affects the other properties.",
+      "plot_type": "scatter_3d"
+    }
+  ]
+}
