@@ -79,28 +79,6 @@ with open("materials_data.json", "r") as f:
     payload = json.load(f)
     mp_results = payload.get("mp_results", [])
 
-summary_data = []
-for material in mp_results:
-    material_id = material.get("material_id")
-    formula_pretty = material.get("formula_pretty")
-    band_gap = material.get("band_gap")
-    energy_above_hull = material.get("energy_above_hull", material.get("e_above_hull"))
-    density = material.get("density")
-    summary_data.append([material_id, formula_pretty, band_gap, energy_above_hull, density])
-
-summary_table_path = os.path.join(PATHS["data_processed"], "summary_table.csv")
-with open(summary_table_path, "w") as f:
-    f.write("material_id,formula_pretty,band_gap,energy_above_hull,density\n")
-    for row in summary_data:
-        f.write(",".join(map(str, row)) + "\n")
-
-try:
-    plots_to_regenerate
-except NameError:
-    plots_to_regenerate = None
-
-is_v2 = isinstance(plots_to_regenerate, list) and len(plots_to_regenerate) > 0
-
 label_map = {
     "band_gap": "Band Gap (eV)",
     "density": "Density (g/cm³)",
@@ -108,6 +86,18 @@ label_map = {
     "e_above_hull": "Energy Above Hull (eV/atom)",
 }
 
+summary_table_path = os.path.join(PATHS["data_processed"], "summary_table.csv")
+with open(summary_table_path, "w") as f:
+    f.write("material_id,formula_pretty,band_gap,energy_above_hull,density\n")
+    for material in mp_results:
+        material_id = material.get("material_id")
+        formula_pretty = material.get("formula_pretty")
+        band_gap = material.get("band_gap")
+        energy_above_hull = material.get("energy_above_hull", material.get("e_above_hull"))
+        density = material.get("density")
+        f.write(f"{material_id},{formula_pretty},{band_gap},{energy_above_hull},{density}\n")
+
+is_v2 = isinstance(plots_to_regenerate, list) and len(plots_to_regenerate) > 0
 manifest = []
 
 for plot_spec in plot_selected:
@@ -116,11 +106,15 @@ for plot_spec in plot_selected:
     description = plot_spec["description"]
     plot_type = plot_spec["plot_type"]
     axes = plot_spec["axes"]
-    slug = plot_type
-    out_path = os.path.join(PATHS["plots_v2"] if is_v2 else PATHS["plots_v1"], f"{plot_id}_{slug}.png")
 
     if is_v2 and plot_id not in plots_to_regenerate:
         continue
+
+    slug = title.lower().replace(" ", "_").replace("-", "_")
+    if is_v2:
+        out_path = os.path.join(PATHS["plots_v2"], f"{plot_id}_{slug}.png")
+    else:
+        out_path = os.path.join(PATHS["plots_v1"], f"{plot_id}_{slug}.png")
 
     if plot_type == "scatter_2d":
         x_data, y_data = [], []
@@ -140,10 +134,11 @@ for plot_spec in plot_selected:
             plt.close()
         else:
             plt.figure()
-            plt.scatter(x_data, y_data)
+            plt.scatter(x_data, y_data, alpha=0.5)
             plt.xlabel(label_map.get(axes["x"], axes["x"]))
             plt.ylabel(label_map.get(axes["y"], axes["y"]))
             plt.title(title)
+            plt.grid(True)
             plt.savefig(out_path)
             assert os.path.exists(out_path)
             plt.close()
@@ -163,7 +158,7 @@ for plot_spec in plot_selected:
             plt.close()
         else:
             plt.figure()
-            plt.hist(hist_data, bins=20, color='skyblue', edgecolor='black')
+            plt.hist(hist_data, bins=30, color='gray', edgecolor='black')
             plt.xlabel(label_map.get(axes["x"], axes["x"]))
             plt.ylabel("Frequency")
             plt.title(title)
@@ -171,13 +166,6 @@ for plot_spec in plot_selected:
             plt.savefig(out_path)
             assert os.path.exists(out_path)
             plt.close()
-    else:
-        plt.figure()
-        plt.title(f"{plot_id} - Insufficient data")
-        plt.text(0.5, 0.5, "Insufficient data", ha="center", va="center")
-        plt.savefig(out_path)
-        assert os.path.exists(out_path)
-        plt.close()
 
     name = f"{plot_id}_{slug}.png"
     manifest_entry = {
@@ -188,6 +176,10 @@ for plot_spec in plot_selected:
     }
     manifest.append(manifest_entry)
 
-manifest_path = os.path.join(PATHS["plots_manifests"], "plots_v2_manifest.json" if is_v2 else "plots_v1_manifest.json")
+if is_v2:
+    manifest_path = os.path.join(PATHS["plots_manifests"], "plots_v2_manifest.json")
+else:
+    manifest_path = os.path.join(PATHS["plots_manifests"], "plots_v1_manifest.json")
+
 with open(manifest_path, "w") as f:
     json.dump(manifest, f, indent=2)

@@ -1,153 +1,118 @@
 {
   "validated_plots": [
     "plot_1",
-    "plot_2",
+    "plot_7",
     "plot_3",
     "plot_4",
     "plot_5"
   ],
   "plot_reviews": {
     "plot_1": {
-      "summary": "Clear scatter plot with appropriate titling and unit-bearing axis labels. The point cloud is easy to read across the small energy-above-hull range and the band-gap range.",
+      "summary": "Overall, the scatter plot is readable and communicates the intended relationship between energy above hull and band gap, but several small issues reduce clarity.",
       "issues": [
-        "Dense clustering near zero on the x-axis causes some over-plotting, slightly obscuring individual points.",
-        "Absence of gridlines or light transparency makes it harder to gauge exact positions for heavily clustered data.",
-        "Tick marks lack minor divisions, so reading small differences (e.g., below 0.005 eV/atom) is less intuitive."
+        "Some markers overlap heavily near zero on the x-axis, making individual points hard to distinguish.",
+        "Tick labels on the x-axis extend to 0.05 eV/atom but most data are clustered below 0.02; scaling could be adjusted for better resolution of dense region.",
+        "No grid lines are provided, which could aid in reading approximate values.",
+        "Point transparency (alpha) is not used, which would help in regions of over-plotting."
       ],
       "improvements": [
-        "Add slight point transparency (alpha) or smaller markers to reduce over-plotting at low x values.",
-        "Enable gridlines or minor ticks to improve quantitative readability, especially on the x-axis.",
-        "Consider expanding horizontal padding or a log/zoomed inset for the congested region near 0 eV/atom to showcase detail."
+        "Consider using a logarithmic or slightly zoomed x-axis (e.g., limit to 0–0.02 eV/atom or break the axis) to emphasize the clustered data while still indicating outliers.",
+        "Add slight transparency and/or smaller marker size or jitter to reduce overlap.",
+        "Introduce subtle grid lines to enhance readability without clutter.",
+        "Optionally annotate median lines or density shading to convey distribution along both axes."
+      ],
+      "severity": "medium",
+      "pass_fail": true
+    },
+    "plot_7": {
+      "summary": "Overall a clear scatter plot with sensible title, axis labels, and units. Data range is appropriate and axes scales appear linear and reasonable.",
+      "issues": [
+        "Dense overlap of points around 0 eV/atom makes it hard to see individual data—no transparency or jitter applied.",
+        "No gridlines; judging exact values is slightly harder.",
+        "Marker size is moderately large, contributing to overplotting.",
+        "Tight layout could be used to reduce surrounding whitespace."
+      ],
+      "improvements": [
+        "Add slight alpha transparency or reduce marker size to improve visibility in dense regions.",
+        "Enable gridlines or minor ticks for easier reading of approximate values.",
+        "Apply plt.tight_layout() (or equivalent) to optimise whitespace."
       ],
       "severity": "low",
       "pass_fail": true
     },
-    "plot_2": {
-      "summary": "Easy-to-read scatter; axes have clear numerical scales and proper physical units, and marker size is appropriate. Overall visual clarity is acceptable.",
-      "issues": [
-        "Plot title claims “Density vs Band Gap” but the x-axis label indicates “Energy Above Hull”; this inconsistency is confusing.",
-        "No legend or annotation clarifies what the markers represent.",
-        "Dense point overlap in the 3–5 eV/atom range may obscure data distribution.",
-        "Minor: lack of grid makes it harder to gauge exact values."
-      ],
-      "improvements": [
-        "Correct the title (or axis label) so the variables are consistent.",
-        "If needed, add a brief legend or caption clarifying the dataset.",
-        "Apply slight transparency or jitter to reduce overplotting, or use smaller markers.",
-        "Enable a light grid to aid readability."
-      ],
-      "severity": "medium",
-      "pass_fail": false
-    },
     "plot_3": {
-      "summary": "The scatter plot is generally legible, but there is a fundamental labeling mismatch that severely hurts interpretability.",
+      "summary": "The scatter conveys the negative correlation clearly and both axes are labeled with appropriate units. Title is descriptive and the overall layout is uncluttered.",
       "issues": [
-        "Plot title claims to show Density vs Energy Above Hull, yet the y-axis label is Band Gap (eV); density is nowhere represented.",
-        "This contradiction makes it impossible for the viewer to understand what the data truly represent.",
-        "Y-axis numerical range (0–0.05 eV) is unusually small for a band-gap plot and may suggest either data truncation or a unit/scale misunderstanding.",
-        "No grid lines or minor ticks to aid reading precise locations of dense point clusters.",
-        "Points overlap heavily at lower band-gap values, creating visual clutter without transparency or jitter."
+        "Marker overlap at low-energy region hides point density, reducing readability.",
+        "No grid lines or reference lines; makes it harder to judge approximate values.",
+        "Font size on axis labels and ticks is a bit small relative to figure size.",
+        "Energy-axis starts at 0 but density axis does not; visual balance feels off."
       ],
       "improvements": [
-        "Correct the title or axis labels so they consistently reflect the plotted variables (e.g., rename y-axis to Density or change title to Band Gap vs Energy Above Hull).",
-        "Add slight transparency (alpha) or jitter to points or use smaller markers to mitigate overplotting.",
-        "Consider enabling grid lines or minor ticks to make value estimation easier.",
-        "If the y-axis truly represents band gap, widen the range or explain why the scale is limited to 0–0.05 eV."
+        "Add slight transparency (alpha) or smaller markers to reveal dense clusters.",
+        "Enable a subtle grid or horizontal reference line at E=0 to aid value estimation.",
+        "Increase label and tick font sizes for better legibility in presentations.",
+        "Consider setting the same style for both axes baselines or add padding for symmetry."
       ],
-      "severity": "high",
-      "pass_fail": false
+      "severity": "low",
+      "pass_fail": true
     },
     "plot_4": {
-      "summary": "Histogram conveys the overall distribution and uses a clear title and a properly-labeled x-axis with units.",
+      "summary": "Clear, straightforward histogram with appropriate axis labels and units; data distribution is easy to read.",
       "issues": [
-        "No y-axis label: reader cannot immediately tell what the bar heights represent.",
-        "Number of bins is very high relative to data range, making bars thin and noisy and reducing readability.",
-        "Noticeable empty space on the right due to a few far-out values; scaling could be adjusted or those points highlighted separately.",
-        "Grid lines or tick marks are sparse, making it a bit harder to gauge exact frequencies."
+        "Tick-label font size could be larger for better readability, especially on presentations.",
+        "Consider adding subtle gridlines to aid visual estimation of frequencies.",
+        "The figure margins are a bit tight on the left and bottom, slightly crowding labels."
       ],
       "improvements": [
-        "Add a y-axis label such as \"Count\" or \"Frequency\".",
-        "Reduce bin count or use an automatic binning method (e.g., Sturges/Freedman-Diaconis) to produce wider, easier-to-read bars.",
-        "Consider x-axis limits or a broken axis / inset to handle distant outliers without large empty space.",
-        "Add subtle grid lines or more prominent tick marks to aid value estimation."
+        "Increase tick-label and axis-label font sizes or change figure DPI for enhanced legibility.",
+        "Add light gridlines to improve value tracking across the plot.",
+        "Provide a bit more padding around the plot area to avoid label crowding."
       ],
-      "severity": "medium",
-      "pass_fail": false
+      "severity": "low",
+      "pass_fail": true
     },
     "plot_5": {
-      "summary": "The histogram is generally clear with a descriptive title and an informative x-axis label that includes units. Bar color and binning look consistent, and the plot is not cluttered.",
+      "summary": "Plot communicates overall shape of density distribution clearly, but several presentation aspects reduce professionalism and ease of interpretation.",
       "issues": [
-        "No y-axis label – readers cannot immediately tell what the counts represent.",
-        "Very tall first bin compresses the rest, making smaller populations hard to see; scaling or log/count break might help.",
-        "No grid or tick enhancement, reducing ease of value estimation.",
-        "Legend is unnecessary but absence of annotation for sample size may leave context vague."
+        "Y-axis lacks a descriptive title such as \"Count\" or \"Frequency\" (currently only \"Frequency\").",
+        "Tick labels are small; font size mismatch between title, axes, and ticks hampers readability.",
+        "Bin count appears high, leading to many sparse bars on the right tail; this makes the histogram look noisy and breaks visual focus.",
+        "Plot frame is quite empty because of extreme right-side outliers; autoscaling leaves large white region in the centre.",
+        "No information about sample size in caption or plot.",
+        "Figure uses default style; colours and gridlines could help interpret density clusters."
       ],
       "improvements": [
-        "Add a y-axis label such as \"Number of Materials\" to clarify the plotted quantity.",
-        "Consider log scale on the y-axis, or break the axis, or re-bin to reduce dominance of the zero-energy bar and reveal detail in the tail.",
-        "Add light grid lines or stronger tick marks for easier reading.",
-        "Optionally note total sample count or percentage to provide context."
+        "Rename y-axis to a clearer term (e.g., \"Count of samples\").",
+        "Increase tick-label font size to match axis titles for better legibility.",
+        "Consider reducing number of bins or using adaptive binning to smooth frequencies, especially given long tail.",
+        "Apply x-axis limits or break to reduce empty space or plot two panels (main and zoomed-in) to handle outliers.",
+        "Add gridlines or subtle background cues to assist reading frequencies.",
+        "If relevant, note sample size in subtitle or caption.",
+        "Optionally use a contrasting colour palette or edge colour to distinguish bars."
       ],
       "severity": "medium",
       "pass_fail": false
     }
   },
   "plots_to_regenerate": [
-    "plot_2",
-    "plot_3",
-    "plot_4",
     "plot_5"
   ],
   "regeneration_reasons": {
-    "plot_2": {
-      "severity": "medium",
-      "pass_fail": false,
-      "structural_issue": false,
-      "issues": [
-        "Plot title claims “Density vs Band Gap” but the x-axis label indicates “Energy Above Hull”; this inconsistency is confusing.",
-        "No legend or annotation clarifies what the markers represent.",
-        "Dense point overlap in the 3–5 eV/atom range may obscure data distribution.",
-        "Minor: lack of grid makes it harder to gauge exact values."
-      ],
-      "reason": "pass_fail=False"
-    },
-    "plot_3": {
-      "severity": "high",
-      "pass_fail": false,
-      "structural_issue": false,
-      "issues": [
-        "Plot title claims to show Density vs Energy Above Hull, yet the y-axis label is Band Gap (eV); density is nowhere represented.",
-        "This contradiction makes it impossible for the viewer to understand what the data truly represent.",
-        "Y-axis numerical range (0–0.05 eV) is unusually small for a band-gap plot and may suggest either data truncation or a unit/scale misunderstanding.",
-        "No grid lines or minor ticks to aid reading precise locations of dense point clusters.",
-        "Points overlap heavily at lower band-gap values, creating visual clutter without transparency or jitter."
-      ],
-      "reason": "pass_fail=False, severity=high"
-    },
-    "plot_4": {
-      "severity": "medium",
-      "pass_fail": false,
-      "structural_issue": false,
-      "issues": [
-        "No y-axis label: reader cannot immediately tell what the bar heights represent.",
-        "Number of bins is very high relative to data range, making bars thin and noisy and reducing readability.",
-        "Noticeable empty space on the right due to a few far-out values; scaling could be adjusted or those points highlighted separately.",
-        "Grid lines or tick marks are sparse, making it a bit harder to gauge exact frequencies."
-      ],
-      "reason": "pass_fail=False"
-    },
     "plot_5": {
       "severity": "medium",
       "pass_fail": false,
       "structural_issue": false,
       "issues": [
-        "No y-axis label – readers cannot immediately tell what the counts represent.",
-        "Very tall first bin compresses the rest, making smaller populations hard to see; scaling or log/count break might help.",
-        "No grid or tick enhancement, reducing ease of value estimation.",
-        "Legend is unnecessary but absence of annotation for sample size may leave context vague."
+        "Y-axis lacks a descriptive title such as \"Count\" or \"Frequency\" (currently only \"Frequency\").",
+        "Tick labels are small; font size mismatch between title, axes, and ticks hampers readability.",
+        "Bin count appears high, leading to many sparse bars on the right tail; this makes the histogram look noisy and breaks visual focus.",
+        "Plot frame is quite empty because of extreme right-side outliers; autoscaling leaves large white region in the centre.",
+        "No information about sample size in caption or plot.",
+        "Figure uses default style; colours and gridlines could help interpret density clusters."
       ],
       "reason": "pass_fail=False"
     }
   },
-  "validation_notes": "Five plots generated: scatter plots for band gap vs. energy above hull, density vs. band gap, and density vs. energy above hull; histograms for band gap and energy above hull distributions."
+  "validation_notes": "V1 plots generated successfully. Proceeding with validation."
 }

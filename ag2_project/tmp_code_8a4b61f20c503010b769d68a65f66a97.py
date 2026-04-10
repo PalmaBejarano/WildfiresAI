@@ -163,11 +163,10 @@ for plot_spec in plot_selected:
             plt.close()
         else:
             plt.figure()
-            plt.hist(hist_data, bins=20, color='skyblue', edgecolor='black')
+            plt.hist(hist_data, bins=30)
             plt.xlabel(label_map.get(axes["x"], axes["x"]))
             plt.ylabel("Frequency")
             plt.title(title)
-            plt.grid(True)
             plt.savefig(out_path)
             assert os.path.exists(out_path)
             plt.close()

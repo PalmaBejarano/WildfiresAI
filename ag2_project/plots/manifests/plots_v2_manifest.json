@@ -1,28 +1,10 @@
 {
   "plots_v2": [
     {
-      "plot_id": "plot_2",
-      "name": "plot_2_scatter_plot_of_density_vs_band_gap.png",
-      "path": "plots/v2/plot_2_scatter_plot_of_density_vs_band_gap.png",
-      "description": "This plot shows the relationship between density and band gap for materials."
-    },
-    {
-      "plot_id": "plot_3",
-      "name": "plot_3_scatter_plot_of_density_vs_energy_above_hull.png",
-      "path": "plots/v2/plot_3_scatter_plot_of_density_vs_energy_above_hull.png",
-      "description": "This plot shows the relationship between density and energy above hull for materials."
-    },
-    {
-      "plot_id": "plot_4",
-      "name": "plot_4_histogram_of_band_gap.png",
-      "path": "plots/v2/plot_4_histogram_of_band_gap.png",
-      "description": "Histogram displaying distribution of band gaps among materials."
-    },
-    {
       "plot_id": "plot_5",
-      "name": "plot_5_histogram_of_energy_above_hull.png",
-      "path": "plots/v2/plot_5_histogram_of_energy_above_hull.png",
-      "description": "Histogram displaying distribution of energies above hull among materials."
+      "name": "plot_5_histogram.png",
+      "path": "plots/v2/plot_5_histogram.png",
+      "description": "This histogram shows the distribution of density values for the retrieved materials."
     }
   ]
 }

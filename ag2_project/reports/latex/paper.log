@@ -221,8 +221,7 @@ File: l3backend-xetex.def 2022-02-07 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count281
 \g__pdf_backend_annotation_int=\count282
 \g__pdf_backend_link_int=\count283
-)
-No file paper.aux.
+) (paper.aux)
 \openout1 = `paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -236,7 +235,7 @@ LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
 8.
-(ts1cmr.fd
+ (ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 18.
@@ -301,12 +300,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 18.
 LaTeX Info: Redefining \pageref on input line 18.
 LaTeX Info: Redefining \nameref on input line 18.
+ (paper.out) (paper.out)
 \@outlinefile=\write3
 \openout3 = `paper.out'.
-
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 20.
@@ -314,20 +310,28 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 20.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 20.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 22.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 22.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 29.
 
-LaTeX Warning: File `scatter_plot_of_band_gap_vs_energy_above_hull.png' not fou
-nd on input line 36.
+Overfull \hbox (89.28601pt too wide) in paragraph at lines 22--23
+\TU/lmr/m/n/9 rier coatings near power lines. The screening process retrieved 1
+00 materials, focusing on energy__BS___above__BS___hull
+ []
 
-! Unable to load picture or PDF file 'scatter_plot_of_band_gap_vs_energy_above_
-hull.png'.
-<to be read again> 
-                   }
-l.36 ...plot_of_band_gap_vs_energy_above_hull.png}
-                                                  
-No pages of output.
+File: plot_1_scatter_2d.png Graphic file (type bmp)
+<plot_1_scatter_2d.png>
+[1
+
+]
+File: plot_7_scatter_2d.png Graphic file (type bmp)
+<plot_7_scatter_2d.png>
+File: plot_3_scatter_2d.png Graphic file (type bmp)
+<plot_3_scatter_2d.png>
+ [2]
+File: plot_4_histogram.png Graphic file (type bmp)
+<plot_4_histogram.png>
+File: plot_5_histogram.png Graphic file (type bmp)
+<plot_5_histogram.png>
+ [3] [4] (paper.aux)
+Package rerunfilecheck Info: File `paper.out' has not changed.
+(rerunfilecheck)             Checksum: D8CDBE15C5EDCE9238FDFB6D9F079726;445.
+ )
+Output written on paper.xdv (4 pages, 34056 bytes).

@@ -42,7 +42,8 @@
     "formula_pretty",
     "band_gap",
     "energy_above_hull",
-    "density"
+    "density",
+    "elements"
   ],
   "sample_number_requested": 100,
   "sample_number_returned": 100

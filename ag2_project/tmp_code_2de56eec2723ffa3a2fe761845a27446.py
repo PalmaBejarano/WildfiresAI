@@ -74,32 +74,11 @@ _ensure_materials_data_json()
 import json
 import os
 import matplotlib.pyplot as plt
+import csv
 
 with open("materials_data.json", "r") as f:
     payload = json.load(f)
     mp_results = payload.get("mp_results", [])
-
-summary_data = []
-for material in mp_results:
-    material_id = material.get("material_id")
-    formula_pretty = material.get("formula_pretty")
-    band_gap = material.get("band_gap")
-    energy_above_hull = material.get("energy_above_hull", material.get("e_above_hull"))
-    density = material.get("density")
-    summary_data.append([material_id, formula_pretty, band_gap, energy_above_hull, density])
-
-summary_table_path = os.path.join(PATHS["data_processed"], "summary_table.csv")
-with open(summary_table_path, "w") as f:
-    f.write("material_id,formula_pretty,band_gap,energy_above_hull,density\n")
-    for row in summary_data:
-        f.write(",".join(map(str, row)) + "\n")
-
-try:
-    plots_to_regenerate
-except NameError:
-    plots_to_regenerate = None
-
-is_v2 = isinstance(plots_to_regenerate, list) and len(plots_to_regenerate) > 0
 
 label_map = {
     "band_gap": "Band Gap (eV)",
@@ -108,6 +87,35 @@ label_map = {
     "e_above_hull": "Energy Above Hull (eV/atom)",
 }
 
+summary_table_path = os.path.join(PATHS["data_processed"], "summary_table.csv")
+with open(summary_table_path, "w", newline="") as csvfile:
+    fieldnames = ["material_id", "formula_pretty", "band_gap", "energy_above_hull", "density"]
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    for material in mp_results:
+        material_id = material.get("material_id")
+        formula_pretty = material.get("formula_pretty")
+        band_gap = material.get("band_gap")
+        energy_above_hull = material.get("energy_above_hull", material.get("e_above_hull"))
+        density = material.get("density")
+        writer.writerow({
+            "material_id": material_id,
+            "formula_pretty": formula_pretty,
+            "band_gap": band_gap,
+            "energy_above_hull": energy_above_hull,
+            "density": density
+        })
+
+print(f"{'Material ID':<15}{'Formula':<20}{'Band Gap (eV)':<15}{'Energy Above Hull (eV/atom)':<30}{'Density (g/cm³)':<15}")
+for material in mp_results:
+    material_id = material.get("material_id")
+    formula_pretty = material.get("formula_pretty")
+    band_gap = material.get("band_gap")
+    energy_above_hull = material.get("energy_above_hull", material.get("e_above_hull"))
+    density = material.get("density")
+    print(f"{material_id:<15}{formula_pretty:<20}{band_gap:<15}{energy_above_hull:<30}{density:<15}")
+
+is_v2 = isinstance(plots_to_regenerate, list) and len(plots_to_regenerate) > 0
 manifest = []
 
 for plot_spec in plot_selected:
@@ -116,11 +124,12 @@ for plot_spec in plot_selected:
     description = plot_spec["description"]
     plot_type = plot_spec["plot_type"]
     axes = plot_spec["axes"]
-    slug = plot_type
-    out_path = os.path.join(PATHS["plots_v2"] if is_v2 else PATHS["plots_v1"], f"{plot_id}_{slug}.png")
 
     if is_v2 and plot_id not in plots_to_regenerate:
         continue
+
+    slug = title.lower().replace(" ", "_").replace("-", "_")
+    out_path = os.path.join(PATHS["plots_v2"] if is_v2 else PATHS["plots_v1"], f"{plot_id}_{slug}.png")
 
     if plot_type == "scatter_2d":
         x_data, y_data = [], []
@@ -163,22 +172,13 @@ for plot_spec in plot_selected:
             plt.close()
         else:
             plt.figure()
-            plt.hist(hist_data, bins=20, color='skyblue', edgecolor='black')
+            plt.hist(hist_data, bins=30)
             plt.xlabel(label_map.get(axes["x"], axes["x"]))
             plt.ylabel("Frequency")
             plt.title(title)
-            plt.grid(True)
             plt.savefig(out_path)
             assert os.path.exists(out_path)
             plt.close()
-    else:
-        plt.figure()
-        plt.title(f"{plot_id} - Insufficient data")
-        plt.text(0.5, 0.5, "Insufficient data", ha="center", va="center")
-        plt.savefig(out_path)
-        assert os.path.exists(out_path)
-        plt.close()
-
     name = f"{plot_id}_{slug}.png"
     manifest_entry = {
         "plot_id": plot_id,
